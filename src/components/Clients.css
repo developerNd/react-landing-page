@@ -1,0 +1,24 @@
+/* Import Instrument Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700;900&display=swap');
+
+/* Import Shadows Into Light font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/* Apply Instrument Sans as default font */
+* {
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Shimmer animation for button */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}

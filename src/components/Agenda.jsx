@@ -49,21 +49,34 @@ const Agenda = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-[#FFFFFF] py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Top Heading - Sprint on second line, yellow background for 3-Day High-Ticket */}
-        <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-2">
-            Results Driven Agenda For <span className="bg-yellow-200 px-2">3-Day High-Ticket</span>
-          </h2>
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900">
-            Sprint
-          </h2>
+        {/* Top Heading - Mobile: 2 lines, Desktop: 2 lines */}
+        <div className="text-center mb-8">
+          {/* Mobile View - 2 lines with yellow background */}
+          <div className="md:hidden">
+            <h2 className="text-3xl font-bold text-blue-900 leading-tight">
+              Results Driven Agenda For <span className="bg-[#FFFECD]">3-</span>
+            </h2>
+            <h2 className="text-3xl font-bold text-blue-900 leading-tight">
+              <span className="bg-[#FFFECD]">Day High-Ticket</span> Sprint
+            </h2>
+          </div>
+
+          {/* Desktop View - 2 lines */}
+          <div className="hidden md:block">
+            <h2 className="text-4xl font-bold text-blue-900 mb-2">
+              Results Driven Agenda For <span className="bg-[#FFFECD] px-2">3-Day High-Ticket</span>
+            </h2>
+            <h2 className="text-4xl font-bold text-blue-900">
+              Sprint
+            </h2>
+          </div>
         </div>
 
         {/* Underline decoration */}
-        <div className="flex justify-center mb-12">
-          <img src={underline} alt="" className="h-1 w-32" />
+        <div className="flex justify-center mb-10">
+          <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
         {/* Three Day Cards - Medium size */}
@@ -77,7 +90,7 @@ const Agenda = () => {
               {/* Day Image with Day Badge overlapping the image */}
               <div className="relative">
                 {/* Day Badge - Top left corner with custom border radius */}
-                <div className="absolute top-0 left-0 bg-yellow-200 text-gray-800 px-4 py-2 flex items-center gap-2 font-bold text-xs z-10" style={{ borderTopLeftRadius: '16px', borderBottomRightRadius: '16px' }}>
+                <div className="absolute top-0 left-0 bg-[#FFFECD] text-gray-800 px-4 py-2 flex items-center gap-2 font-bold text-xs z-10" style={{ borderTopLeftRadius: '16px', borderBottomRightRadius: '16px' }}>
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -124,13 +137,13 @@ const Agenda = () => {
                         }}
                       >
                         <svg width="20" height="20" viewBox="0 0 20 20" style={{ display: 'block' }}>
-                          <circle cx="10" cy="10" r="10" fill="#93C5FD" />
-                          <circle cx="10" cy="10" r="3.5" fill="#2563EB" />
+                          <circle cx="10" cy="10" r="10" fill="#C1DEF6" />
+                          <circle cx="10" cy="10" r="3.5" fill="#2C82C9" />
                         </svg>
                       </div>
                       {/* Point Text */}
                       <p
-                        className="text-sm text-gray-700 leading-relaxed"
+                        className="text-base text-gray-700 leading-relaxed"
                         style={{ flex: 1 }}
                         dangerouslySetInnerHTML={{ __html: point }}
                       />
@@ -142,12 +155,14 @@ const Agenda = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Full width on mobile */}
         <div className="flex flex-col items-center gap-6 mt-12">
           {/* Enroll Button with Badge */}
-          <div className="relative">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl md:text-2xl px-12 py-4 rounded-xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
-              <span className="relative z-10">ENROLL NOW @ 99 ₹999</span>
+          <div className="relative w-full md:w-auto">
+            <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
+              <span className="relative z-10">
+                ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
+              </span>
               <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </button>
             <span className="absolute -top-3 -right-3 bg-black text-white text-sm px-4 py-2 rounded-full font-bold animate-pulse z-20">

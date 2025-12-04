@@ -2,6 +2,7 @@ import React from "react";
 import underline from "../assets/images/underline.png";
 import pricingTable from "../assets/images/pricing_table.png";
 import shubhImage from "../assets/images/man.png";
+import "./caveat.css";
 
 const Pricing = () => {
   const credentials = [
@@ -13,18 +14,59 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-[#F9FAFB] py-10 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Top Heading */}
+        {/* Top Heading - Mobile: 2 lines with Caveat font, Desktop: 1 line */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3">
-            YES! Save My Spot For The 'High Ticket Sprint!!'
-          </h2>
+          {/* Mobile View - 2 lines with custom font */}
+          <div className="md:hidden">
+            <h2 
+              style={{
+                fontFamily: "'Caveat', sans-serif",
+                fontWeight: 700,
+                fontStyle: "normal",
+                color: "rgb(15, 44, 128)",
+                fontSize: "30px",
+                lineHeight: "39px",
+              }}
+            >
+              YES! Save My Spot For The 'High Ticket
+            </h2>
+            <h2 
+              style={{
+                fontFamily: "'Caveat', sans-serif",
+                fontWeight: 700,
+                fontStyle: "normal",
+                color: "rgb(15, 44, 128)",
+                fontSize: "30px",
+                lineHeight: "39px",
+              }}
+            >
+              Sprint!!'
+            </h2>
+          </div>
+
+          {/* Desktop View - 1 line with custom font */}
+          <div className="hidden md:block">
+            <h2 
+              style={{
+                fontFamily: "'Caveat', sans-serif",
+                fontWeight: 700,
+                fontStyle: "normal",
+                color: "rgb(15, 44, 128)",
+                fontSize: "clamp(32px, 4vw, 38px)",
+                lineHeight: "1.2",
+              }}
+              className="mb-3"
+            >
+              YES! Save My Spot For The 'High Ticket Sprint!!'
+            </h2>
+          </div>
         </div>
 
         {/* Underline decoration */}
-        <div className="flex justify-center mb-12">
-          <img src={underline} alt="" className="h-1 w-32" />
+        <div className="flex justify-center mb-8">
+          <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
         {/* Pricing Table Image */}
@@ -49,14 +91,15 @@ const Pricing = () => {
           </h3>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Full width on mobile */}
         <div className="flex flex-col items-center gap-6 mt-12 mb-16">
           {/* Enroll Button with Badge */}
-          <div className="relative">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl md:text-2xl px-12 py-4 rounded-xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
+          <div className="relative w-full md:w-auto">
+            <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
               <span className="relative z-10">
-                ENROLL NOW @ 99 <span className="line-through">₹999</span>
+                ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
               </span>
+              <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </button>
             <span className="absolute -top-3 -right-3 bg-black text-white text-sm px-4 py-2 rounded-full font-bold animate-pulse z-20">
               10 Seats Left
@@ -84,8 +127,13 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Who Is Shubh Section - Dark Background matching theme */}
-        <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 rounded-3xl p-8 md:p-8 shadow-2xl max-w-6xl mx-auto">
+        {/* Who Is Shubh Section - Updated gradient with two colors */}
+        <div 
+          className="rounded-3xl p-8 md:p-8 shadow-2xl max-w-6xl mx-auto"
+          style={{
+            background: "linear-gradient(to bottom, #070C27, #18214B)"
+          }}
+        >
           {/* Heading */}
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -106,16 +154,15 @@ const Pricing = () => {
           <div className="grid md:grid-cols-2 gap-10 items-start mt-10 relative">
             {/* Left Side - Image with Star */}
             <div className="flex justify-center relative">
-              {/* Decorative Star */}
+              {/* Decorative Star - Updated color */}
               <div className="absolute -left-6 top-4 z-10">
                 <svg width="40" height="46" viewBox="0 0 40 56" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M14 0H9.99999V23.1716L-6.38477 6.78678L-9.21319 9.61523L7.17157 26H-16V30H7.17154L-9.21319 46.3848L-6.38477 49.2131L9.99999 32.8283V56H14V32.8283L30.3848 49.2131L33.2131 46.3848L16.8283 30H40V26H16.8283L33.2131 9.6152L30.3848 6.78678L14 23.1715V0Z" fill="url(#paint0_linear_2058_375)"/>
-                  <defs>
-                    <linearGradient id="paint0_linear_2058_375" x1="0" y1="0" x2="40" y2="56" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#8ed1fc"/>
-                      <stop offset="1" stopColor="#0693e3"/>
-                    </linearGradient>
-                  </defs>
+                  <path 
+                    fillRule="evenodd" 
+                    clipRule="evenodd" 
+                    d="M14 0H9.99999V23.1716L-6.38477 6.78678L-9.21319 9.61523L7.17157 26H-16V30H7.17154L-9.21319 46.3848L-6.38477 49.2131L9.99999 32.8283V56H14V32.8283L30.3848 49.2131L33.2131 46.3848L16.8283 30H40V26H16.8283L33.2131 9.6152L30.3848 6.78678L14 23.1715V0Z" 
+                    fill="#423F83"
+                  />
                 </svg>
               </div>
               {/* Placeholder for man image */}
@@ -147,14 +194,21 @@ const Pricing = () => {
                         viewBox="0 0 18 18"
                         style={{ display: "block" }}
                       >
-                        <circle cx="9" cy="9" r="9" fill="#213266" />
-                        <circle cx="9" cy="9" r="3" fill="#337CBC" />
+                        <circle cx="9" cy="9" r="9" fill="#102347" />
+                        <circle cx="9" cy="9" r="4" fill="#2C82C9" />
                       </svg>
                     </div>
-                    {/* Credential Text */}
+                    {/* Credential Text - Updated with Instrument Sans styles */}
                     <p
-                      className="text-white text-sm md:text-base font-medium leading-snug"
-                      style={{ flex: 1 }}
+                      style={{
+                        fontFamily: "'Instrument Sans', sans-serif",
+                        fontWeight: 700,
+                        fontStyle: "normal",
+                        color: "rgb(255, 255, 255)",
+                        fontSize: "15px",
+                        lineHeight: "23px",
+                        flex: 1,
+                      }}
                     >
                       {credential}
                     </p>

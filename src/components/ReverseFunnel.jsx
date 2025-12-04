@@ -12,21 +12,21 @@ const ReverseFunnel = () => {
       thumbnail: require("../assets/images/thumb1.png"),
       video: require("../assets/videos/testimonial1.mp4"),
       text: '"Made 65 lakhs without ads!"',
-      isPortrait: true, // Portrait format
+      isPortrait: true,
     },
     {
       id: 2,
       thumbnail: require("../assets/images/thumb2.png"),
       video: require("../assets/videos/testimonial2.mp4"),
       text: '"Generated 80 lakh in two days!"',
-      isPortrait: true, // Portrait format
+      isPortrait: true,
     },
     {
       id: 3,
       thumbnail: require("../assets/images/thumb3.png"),
       video: require("../assets/videos/testimonial3.mp4"),
       text: '"Made so much revenue 3 days, what usually takes 6 months!"',
-      isPortrait: true, // Portrait format - Changed to true
+      isPortrait: true,
     },
   ];
 
@@ -41,37 +41,62 @@ const ReverseFunnel = () => {
   };
 
   return (
-    <div className="bg-white py-12 px-4">
+    <div className="bg-[#F8FAFF] py-12 px-4 md:px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Top Heading - "You'll" with underline on first row */}
+        {/* Top Heading - Mobile: 4 lines FULL WIDTH, Desktop: 2 lines */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-2">
-            After{" "}
-            <span className="bg-yellow-200 px-2">65+ Crores In Sales</span> The
-            Only System{" "}
-            <span className="underline decoration-4 decoration-blue-900">
-              You'll
-            </span>
-          </h2>
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900">
-            <span className="underline decoration-4 decoration-blue-900">
-              Ever Need
-            </span>{" "}
-            To Hit 1 CR Rapidly In 2025!
-          </h2>
+          {/* Mobile View - 4 lines with NO horizontal padding */}
+          <div className="md:hidden -mx-4 px-0">
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+              After <span className="bg-[#FFFECD]">65+ Crores In Sales</span>
+            </h2>
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+              The Only System{" "}
+              <span className="underline decoration-4 decoration-blue-900">
+                You'll Ever
+              </span>
+            </h2>
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+              <span className="underline decoration-4 decoration-blue-900">
+                Need
+              </span>{" "}
+              To Hit 1 CR Rapidly In
+            </h2>
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+              2025!
+            </h2>
+          </div>
+
+          {/* Desktop View - 2 lines */}
+          <div className="hidden md:block">
+            <h2 className="text-4xl font-bold text-blue-900 mb-2">
+              After{" "}
+              <span className="bg-[#FFFECD] px-2">65+ Crores In Sales</span> The
+              Only System{" "}
+              <span className="underline decoration-4 decoration-blue-900">
+                You'll
+              </span>
+            </h2>
+            <h2 className="text-4xl font-bold text-blue-900">
+              <span className="underline decoration-4 decoration-blue-900">
+                Ever Need
+              </span>{" "}
+              To Hit 1 CR Rapidly In 2025!
+            </h2>
+          </div>
         </div>
 
-        {/* Underline decoration using image from Clients section */}
-        <div className="flex justify-center mb-8">
-          <img src={underline} alt="" className="h-1 w-32" />
+        {/* Underline decoration - Reduced margin on mobile */}
+        <div className="flex justify-center mb-4 md:mb-8">
+          <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
-        {/* Pipe System Image - Slightly increased size */}
-        <div className="flex justify-center mb-16">
+        {/* Pipe System Image - FULL WIDTH on mobile by breaking out of padding */}
+        <div className="flex justify-center mb-16 -mx-4 md:mx-0">
           <img
             src={pipeSystemImage}
             alt="Reverse Funnel System Pipeline"
-            className="w-full max-w-6xl"
+            className="w-full md:max-w-6xl px-1 md:px-0"
             onError={(e) => {
               e.target.style.display = "none";
               console.log("Pipe system image not found");
@@ -79,14 +104,14 @@ const ReverseFunnel = () => {
           />
         </div>
 
-        {/* Three Testimonial Video Cards - Increased size with proper shadow */}
+        {/* Three Testimonial Video Cards */}
         <div className="grid md:grid-cols-3 gap-4 mb-12 max-w-6xl mx-auto">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
               className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-shadow"
             >
-              {/* Video Thumbnail with Play Button Overlay - Thumbnail inside with padding */}
+              {/* Video Thumbnail with Play Button Overlay */}
               <div className="p-4">
                 <div
                   className="relative w-full bg-gray-200 rounded-xl overflow-hidden cursor-pointer group"
@@ -100,7 +125,7 @@ const ReverseFunnel = () => {
                       e.target.src = `https://ui-avatars.com/api/?name=Testimonial+${testimonial.id}&size=400&background=random`;
                     }}
                   />
-                  {/* Play Button Overlay with Transparent Symbol */}
+                  {/* Play Button Overlay */}
                   <div
                     className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 group-hover:bg-opacity-30 transition"
                     onClick={() => handlePlayVideo(testimonial)}
@@ -131,12 +156,14 @@ const ReverseFunnel = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Full width on mobile */}
         <div className="flex flex-col items-center gap-6 mt-12">
           {/* Enroll Button with Badge */}
-          <div className="relative">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl md:text-2xl px-12 py-4 rounded-xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
-              <span className="relative z-10">ENROLL NOW @ 99 ₹999</span>
+          <div className="relative w-full md:w-auto">
+            <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
+              <span className="relative z-10">
+                ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
+              </span>
               <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </button>
             <span className="absolute -top-3 -right-3 bg-black text-white text-sm px-4 py-2 rounded-full font-bold animate-pulse z-20">
@@ -166,7 +193,7 @@ const ReverseFunnel = () => {
         </div>
       </div>
 
-      {/* Video Modal - Portrait and Landscape Support with proper aspect ratio */}
+      {/* Video Modal */}
       {isModalOpen && playingVideo && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4"
@@ -199,7 +226,7 @@ const ReverseFunnel = () => {
               </svg>
             </button>
 
-            {/* Video Player - Portrait videos maintain aspect ratio */}
+            {/* Video Player */}
             <video
               controls
               autoPlay

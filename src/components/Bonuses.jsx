@@ -64,21 +64,37 @@ const Bonuses = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-4">
+    <div className="bg-[#F5F6F8] py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Top Heading */}
+        {/* Top Heading - Mobile: 3 lines, Desktop: 1 line */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-8">
-            Get <strong>INSANE</strong> Bonuses{" "}
-            <span className="bg-yellow-200 px-2">
-              (Previously Sold For ₹24,997)
-            </span>
-          </h2>
+          {/* Mobile View - 3 lines */}
+          <div className="md:hidden">
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+              Get <strong>INSANE</strong> Bonuses
+            </h2>
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+              <span className="bg-[#FFFECD]">(Previously Sold For</span>
+            </h2>
+            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+              <span className="bg-[#FFFECD]">₹24,997)</span>
+            </h2>
+          </div>
+
+          {/* Desktop View - 1 line */}
+          <div className="hidden md:block">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">
+              Get <strong>INSANE</strong> Bonuses{" "}
+              <span className="bg-[#FFFECD] px-2">
+                (Previously Sold For ₹24,997)
+              </span>
+            </h2>
+          </div>
         </div>
 
         {/* Underline decoration */}
         <div className="flex justify-center mb-6">
-          <img src={underline} alt="" className="h-1 w-32" />
+          <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
         {/* Head Image - Reduced Size */}
@@ -94,7 +110,7 @@ const Bonuses = () => {
         </div>
 
         {/* Bonuses Grid - 2x2 */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-6 max-w-4xl mx-auto">
           {bonuses.map((bonus) => (
             <div key={bonus.id} className="relative pt-5">
               {/* Background Image - Behind and slightly above the card */}
@@ -143,7 +159,7 @@ const Bonuses = () => {
                         className="absolute left-0 top-0 bottom-0 w-1 bg-gray-800 rounded-r-full"
                         style={{ marginLeft: "-32px" }}
                       ></div>
-                      <div className="pl-4">
+                      <div className="pl-1">
                         <h3 className="text-lg font-bold text-gray-900">
                           {bonus.title}
                         </h3>
@@ -167,8 +183,8 @@ const Bonuses = () => {
                               viewBox="0 0 18 18"
                               style={{ display: "block" }}
                             >
-                              <circle cx="9" cy="9" r="9" fill="#93C5FD" />
-                              <circle cx="9" cy="9" r="3" fill="#2563EB" />
+                              <circle cx="9" cy="9" r="9" fill="#C1DEF6" />
+                              <circle cx="9" cy="9" r="3" fill="#2C82C9" />
                             </svg>
                           </div>
                           {/* Point Text - Increased to text-base */}
@@ -183,8 +199,13 @@ const Bonuses = () => {
                     </div>
                   </div>
 
-                  {/* Price Badge - Full Width No Borders */}
-                  <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center py-3 font-bold text-xl">
+                  {/* Price Badge - Full Width with Custom Gradient */}
+                  <div
+                    className="text-white text-center py-3 font-bold text-xl"
+                    style={{
+                      background: "linear-gradient(to right, #3950A3, #0A2F50)",
+                    }}
+                  >
                     {bonus.price}
                   </div>
                 </div>

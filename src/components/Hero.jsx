@@ -88,7 +88,7 @@ const Hero = () => {
                 color: "rgb(252, 254, 255)",
               }}
             >
-              ⏰ Give Me 3 Days & I'll Show You How To...
+              ⏰ Give Me 21 Days & I'll Show You How To...
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ const Hero = () => {
                   color: "rgb(8, 22, 64)",
                 }}
               >
-                8 Lakhs/Month
+                10 Lakhs/Month
               </span>
               <span
                 className="text-[21px] sm:text-2xl md:text-5xl text-center"
@@ -177,7 +177,7 @@ const Hero = () => {
             }}
             className="mb-[20px]"
           >
-            ... Zero Tech Method & Complete Time Freedom.
+            ... 10 Minutes a day will change your entire Business.
           </p>
 
           {/* Features with Two-Color Icons - Updated colors to #BCC7F9 outer and #1C348F inner */}
@@ -222,7 +222,7 @@ const Hero = () => {
                   color: "rgb(69, 69, 69)",
                 }}
               >
-                NO Sales Calls
+                NO Paid Ads
               </span>
             </div>
             <div
@@ -265,7 +265,7 @@ const Hero = () => {
                   color: "rgb(69, 69, 69)",
                 }}
               >
-                NO Content Junk
+                NO Endless Content
               </span>
             </div>
             <div
@@ -308,7 +308,7 @@ const Hero = () => {
                   color: "rgb(69, 69, 69)",
                 }}
               >
-                NO Begging For Sales
+                NO Road Activity
               </span>
             </div>
           </div>
@@ -316,8 +316,8 @@ const Hero = () => {
           {/* Video and Implementation Section */}
           <div className="grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-6 items-start max-w-6xl mx-auto mb-[20px]">
             {/* Video Section with External Thumbnail */}
-            <div className="mb-[20px]">
-              <div className="mb-[40px]">
+            <div className="mb-[10px]">
+              <div className="mb-[20px] md:mb-[100px]">
                 <div className="bg-black rounded-xl overflow-hidden aspect-video relative shadow-xl w-full">
                   <video
                     ref={videoRef}
@@ -361,7 +361,7 @@ const Hero = () => {
                 </div>
               </div>
               <div>
-                <div className="w-full md:w-auto md:-mt-16 md:-ml-4">
+                <div className="w-full md:w-auto md:-mt-16 md:-ml-1">
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full md:w-[565px]">
                     <div
                       className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
@@ -399,7 +399,7 @@ const Hero = () => {
                               fontSize: "clamp(12px, 2vw, 12px)",
                               lineHeight: "clamp(15px, 2.5vw, 18px)",
                               color: "rgb(102, 126, 234)",
-                              textTransform: 'uppercase',
+                              textTransform: "uppercase",
                             }}
                           >
                             Date
@@ -455,7 +455,7 @@ const Hero = () => {
                               fontSize: "clamp(12px, 2vw, 12px)",
                               lineHeight: "clamp(15px, 2.5vw, 18px)",
                               color: "rgb(102, 126, 234)",
-                              textTransform: 'uppercase',
+                              textTransform: "uppercase",
                             }}
                           >
                             Time
@@ -476,7 +476,7 @@ const Hero = () => {
                     </div>
 
                     <div
-                       className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
                       style={{
                         boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
                       }}
@@ -517,7 +517,7 @@ const Hero = () => {
                               fontSize: "clamp(12px, 2vw, 12px)",
                               lineHeight: "clamp(15px, 2.5vw, 18px)",
                               color: "rgb(102, 126, 234)",
-                              textTransform: 'uppercase',
+                              textTransform: "uppercase",
                             }}
                           >
                             Where
@@ -538,7 +538,7 @@ const Hero = () => {
                     </div>
 
                     <div
-                       className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
                       style={{
                         boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
                       }}
@@ -573,7 +573,7 @@ const Hero = () => {
                               fontSize: "clamp(12px, 2vw, 12px)",
                               lineHeight: "clamp(15px, 2.5vw, 18px)",
                               color: "rgb(102, 126, 234)",
-                              textTransform: 'uppercase',
+                              textTransform: "uppercase",
                             }}
                           >
                             Language
@@ -596,7 +596,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            
+
             <div>
               {/* Implementation Agenda */}
               <div className="bg-[#F0F0FD] rounded-2xl p-6 sm:p-8 text-left shadow-lg relative border border-blue-100 border-b-2 border-b-[#151F44] mb-[20px]">
@@ -624,7 +624,11 @@ const Hero = () => {
                     Implementation Agenda:
                   </h3>
                   <div className="flex justify-center">
-                    <img src={underline} alt="" className="h-1 w-[50%] sm:w-32" />
+                    <img
+                      src={underline}
+                      alt=""
+                      className="h-1 w-[50%] sm:w-32"
+                    />
                   </div>
                 </div>
 
@@ -675,7 +679,7 @@ const Hero = () => {
                           color: "rgb(42, 42, 42)",
                         }}
                       >
-                        10 Lakhs or More in Sales In ONE Weekend
+                        10 Lakhs or More in Sales In ONE Month  
                       </strong>{" "}
                       Which Would Otherwise Take You Months to HIT!
                     </p>
@@ -785,7 +789,7 @@ const Hero = () => {
                 </div>
               </div>
               {/* Event Details and CTA Section - Side by Side */}
-              <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-6 max-w-6xl mx-auto">
                 {/* Right Side - CTA Button and Seats */}
                 <div className="flex flex-col items-center justify-center gap-4 w-full md:w-auto">
                   {/* CTA Button with Shimmer Effect */}
@@ -793,7 +797,9 @@ const Hero = () => {
                     <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-[20px] text-base sm:text-lg md:text-xl px-[20px] sm:px-8 md:px-10 py-[20px] sm:py-4 rounded-[20px] shadow-2xl relative transition transform hover:scale-105 overflow-hidden w-full md:w-auto md:whitespace-nowrap">
                       <span className="relative z-10">
                         ENROLL NOW @ 99{" "}
-                        <span className="line-through text-red-300 ml-1">₹999</span>
+                        <span className="line-through text-red-300 ml-1">
+                          ₹999
+                        </span>
                       </span>
                       <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
                     </button>
