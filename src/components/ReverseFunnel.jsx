@@ -42,6 +42,49 @@ const ReverseFunnel = () => {
 
   return (
     <div className="bg-[#F8FAFF] py-12 px-4 md:px-4">
+      {/* Add keyframes for arrow animation */}
+      <style>
+        {`
+          @keyframes drawArrow {
+            0% {
+              stroke-dashoffset: 1000;
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            50% {
+              stroke-dashoffset: 0;
+              opacity: 1;
+            }
+            100% {
+              stroke-dashoffset: 0;
+              opacity: 1;
+            }
+          }
+          
+          .animated-arrow path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawArrow 2s ease-in-out infinite;
+          }
+          
+          .animated-arrow-delay-1 path {
+            animation-delay: 0s;
+          }
+          
+          .animated-arrow-delay-2 path {
+            animation-delay: 0s;
+          }
+          
+          .animated-arrow-delay-3 path {
+            animation-delay: 0s;
+          }
+
+
+        `}
+      </style>
+
       <div className="max-w-7xl mx-auto">
         {/* Top Heading - Mobile: 4 lines FULL WIDTH, Desktop: 2 lines */}
         <div className="text-center mb-6">
@@ -92,7 +135,7 @@ const ReverseFunnel = () => {
         </div>
 
         {/* Pipe System Image - FULL WIDTH on mobile by breaking out of padding */}
-        <div className="flex justify-center mb-16 -mx-4 md:mx-0">
+        <div className="flex justify-center mb-8 -mx-4 md:mx-0">
           <img
             src={pipeSystemImage}
             alt="Reverse Funnel System Pipeline"
@@ -103,6 +146,157 @@ const ReverseFunnel = () => {
             }}
           />
         </div>
+
+        {/* Animated Arrows Above Videos - Desktop */}
+        <div className="hidden md:grid md:grid-cols-3 gap-4 mb-6 max-w-6xl mx-auto">
+          {/* Arrow 1 - Left pointing down with left curve */}
+          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 500 500" 
+              width="90" 
+              height="100" 
+              preserveAspectRatio="xMidYMid meet"
+              style={{ transform: 'rotate(-53deg) scaleX(-1)' }}
+              className="animated-arrow animated-arrow-delay-1"
+            >
+              <defs>
+                <clipPath id="arrow_clip_1">
+                  <rect width="500" height="500" x="0" y="0"></rect>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#arrow_clip_1)">
+                <g transform="matrix(0.9424005746841431,0,0,0.9424005746841431,22.443023681640625,21.231292724609375)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,395.6400146484375,406.60198974609375)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M-20.073999404907227,-6.644000053405762 C-11.211999893188477,1.972000002861023 -2.3499999046325684,10.588000297546387 6.51200008392334,19.204999923706055 C11.032999992370605,6.401000022888184 15.553000450134277,-6.4019999504089355 20.072999954223633,-19.20599937438965"
+                    />
+                  </g>
+                </g>
+                <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,241.61900329589844,244.86000061035156)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M-157.33299255371094,-170.66700744628906 C-79.21399688720703,-152.82699584960938 20.39699935913086,-125.90799713134766 18.66699981689453,-101.33300018310547 C16.583999633789062,-71.75 -130.9969940185547,-64.63899993896484 -130.66600036621094,-45.33300018310547 C-130.4770050048828,-34.270999908447266 -20.452999114990234,-60.83100128173828 58.66699981689453,-10.666999816894531 C115.947998046875,25.650999069213867 141.22999572753906,91.81099700927734 153.23300170898438,148.71800231933594"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          {/* Arrow 2 - Center pointing straight down */}
+          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 500 500" 
+              width="90" 
+              height="100" 
+              preserveAspectRatio="xMidYMid meet"
+              className="animated-arrow animated-arrow-delay-2"
+            >
+              <defs>
+                <clipPath id="arrow_clip_2">
+                  <rect width="500" height="500" x="0" y="0"></rect>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#arrow_clip_2)">
+                <g transform="matrix(0.9424005746841431,0,0,0.9424005746841431,8.761749267578125,20.2310791015625)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,165.5489959716797,408.22698974609375)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M-22.608999252319336,-10.553000450134277 C-22.608999252319336,-10.553000450134277 10.477999687194824,25.02899932861328 10.477999687194824,25.02899932861328 C14.522000312805176,8.343000411987305 18.565000534057617,-8.343000411987305 22.608999252319336,-25.02899932861328"
+                    />
+                  </g>
+                </g>
+                <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,249.40199279785156,242.52999877929688)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M160.60000610351562,-173.0290069580078 C-76.98200225830078,-178.9709930419922 -158.76100158691406,-174.7209930419922 -159.39999389648438,-165.91799926757812 C-160.60000610351562,-149.406005859375 123.46099853515625,-113.99199676513672 121.48899841308594,-87.69499969482422 C120.177001953125,-70.2040023803711 -5.004000186920166,-92.18800354003906 -63.400001525878906,-23.695999145507812 C-101.3740005493164,20.843000411987305 -98.48400115966797,88.83899688720703 -84.93299865722656,149.91400146484375"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          {/* Arrow 3 - Right pointing down with right curve */}
+          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 500 500" 
+              width="90" 
+              height="100" 
+              preserveAspectRatio="xMidYMid meet"
+              style={{ transform: 'rotate(53deg)' }}
+              className="animated-arrow animated-arrow-delay-3"
+            >
+              <defs>
+                <clipPath id="arrow_clip_3">
+                  <rect width="500" height="500" x="0" y="0"></rect>
+                </clipPath>
+              </defs>
+              <g clipPath="url(#arrow_clip_3)">
+                <g transform="matrix(0.9424005746841431,0,0,0.9424005746841431,22.443023681640625,21.231292724609375)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,395.6400146484375,406.60198974609375)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M-20.073999404907227,-6.644000053405762 C-11.211999893188477,1.972000002861023 -2.3499999046325684,10.588000297546387 6.51200008392334,19.204999923706055 C11.032999992370605,6.401000022888184 15.553000450134277,-6.4019999504089355 20.072999954223633,-19.20599937438965"
+                    />
+                  </g>
+                </g>
+                <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                  <g opacity="1" transform="matrix(1,0,0,1,241.61900329589844,244.86000061035156)">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      fillOpacity="0" 
+                      fill="none"
+                      stroke="rgb(255,3,3)" 
+                      strokeOpacity="1" 
+                      strokeWidth="13" 
+                      d="M-157.33299255371094,-170.66700744628906 C-79.21399688720703,-152.82699584960938 20.39699935913086,-125.90799713134766 18.66699981689453,-101.33300018310547 C16.583999633789062,-71.75 -130.9969940185547,-64.63899993896484 -130.66600036621094,-45.33300018310547 C-130.4770050048828,-34.270999908447266 -20.452999114990234,-60.83100128173828 58.66699981689453,-10.666999816894531 C115.947998046875,25.650999069213867 141.22999572753906,91.81099700927734 153.23300170898438,148.71800231933594"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+
 
         {/* Three Testimonial Video Cards */}
         <div className="grid md:grid-cols-3 gap-4 mb-12 max-w-6xl mx-auto">
