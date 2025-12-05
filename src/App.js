@@ -2,6 +2,12 @@ import React from 'react';
 import { Hero, Clients, ReverseFunnel, Agenda, Bonuses, Pricing, FAQ } from './components';
 
 function App() {
+  // Get current date formatted
+  const getCurrentDate = () => {
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    return new Date().toLocaleDateString('en-US', options);
+  };
+
   return (
     <div className="App relative pb-4 lg:pb-10">
       <Hero />        
@@ -13,15 +19,15 @@ function App() {
       <FAQ />
       
       {/* Sticky Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.15)] py-3 px-3 z-50">
-        <div className="max-w-6xl mx-auto flex flex-row items-center justify-between gap-2">
+      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.15)] py-3 px-8 sm:px-10 md:px-6 lg:px-3 z-50">
+        <div className="max-w-6xl mx-auto flex flex-row items-center justify-between gap-4 sm:gap-5">
           {/* Left Side - Price and Deadline */}
           <div className="flex flex-col items-start">
             <div className="flex items-baseline gap-1 sm:gap-2">
               <p className="text-2xl sm:text-4xl font-bold text-green-600">₹99</p>
               <span className="line-through text-red-500 text-lg sm:text-2xl font-semibold">₹999</span>
             </div>
-            <p className="text-xs sm:text-sm text-gray-600 mt-1">Deadline Dec 3, 2025</p>
+            <p className="text-sm sm:text-base font-semibold mt-1" style={{color: '#2A2A2A'}}>Deadline {getCurrentDate()}</p>
           </div>
           
           {/* Empty spacer */}
@@ -38,7 +44,7 @@ function App() {
                 10 Seats Left
               </span>
             </div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-700">+ Unbelievable Bonuses</p>
+            <p className="text-sm sm:text-base font-semibold" style={{color: '#2A2A2A'}}>+ Unbelievable Bonuses</p>
           </div>
         </div>
       </div>

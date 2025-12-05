@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import underline from "../assets/images/underline.png";
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndexes, setOpenIndexes] = useState([]);
 
   const faqs = [
     {
@@ -32,43 +32,48 @@ const FAQ = () => {
   ];
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    if (openIndexes.includes(index)) {
+      // Close the question if it's already open
+      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    } else {
+      // Open the question by adding it to the array
+      setOpenIndexes([...openIndexes, index]);
+    }
   };
 
   return (
-    <div className="bg-[#F5F6F8] py-16 px-4">
-      <div className="max-w-5xl mx-auto">
+    <div className="bg-[#F5F6F8] py-12 px-4">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-6">
-          <h2 className="text-[27px] md:text-4xl font-bold text-blue-900 mb-4">
-            <span className="bg-yellow-200 px-2">Frequently</span> Asked Questions
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+            <span className="bg-[#FFFECD] px-2">Frequently</span> Asked Questions
           </h2>
         </div>
 
         {/* Underline decoration */}
-        <div className="flex justify-center mb-12">
-          <img src={underline} alt="" className="h-1 w-32" />
+        <div className="flex justify-center mb-8">
+          <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4 mb-12">
+        {/* FAQ Accordion - Increased max width with enhanced shadow */}
+        <div className="space-y-3 mb-12 max-w-6xl mx-auto">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
-              className="bg-white rounded-lg overflow-hidden"
-              style={{ boxShadow: "0 2px 10px rgb(0 0 0 / .1)" }}
+              className="bg-white rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-shadow overflow-hidden"
             >
-              {/* Question Button */}
+              {/* Question Button - White background */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-[16px] text-left hover:bg-gray-50 transition border-b border-[#ddd]"
+                className="w-full flex items-center justify-between px-6 py-5 text-left bg-white hover:bg-gray-50 transition"
               >
-                <h3 className="text-sm md:text-base font-bold text-gray-900 pr-4">
+                <h3 className="text-sm md:text-base font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </h3>
                 <svg
                   className={`w-6 h-6 text-gray-900 flex-shrink-0 transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
+                    openIndexes.includes(index) ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -83,12 +88,15 @@ const FAQ = () => {
                 </svg>
               </button>
 
-              {/* Answer */}
-              {openIndex === index && (
-                <div className="px-6 pb-6 pt-0">
-                  <p className="text-gray-900 text-sm md:text-base font-bold leading-relaxed">
-                    {faq.answer}
-                  </p>
+              {/* Answer - Full width separator */}
+              {openIndexes.includes(index) && (
+                <div className="bg-white">
+                  <div className="border-t border-gray-200"></div>
+                  <div className="px-6 py-5">
+                    <p className="text-gray-900 text-sm md:text-base font-bold leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               )}
             </div>
@@ -96,7 +104,7 @@ const FAQ = () => {
         </div>
 
         {/* Footer Section - Same background as section */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center mb-12">
           {/* Copyright */}
           <p className="text-gray-900 font-semibold mb-4">
             Copyright © [2025],[Launch at scale]. All rights reserved.

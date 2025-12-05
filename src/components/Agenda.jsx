@@ -75,7 +75,7 @@ const Agenda = () => {
         </div>
 
         {/* Underline decoration */}
-        <div className="flex justify-center mb-2">
+        <div className="flex justify-center mb-4">
           <img src={underline} alt="" className="h-1 w-40" />
         </div>
 
