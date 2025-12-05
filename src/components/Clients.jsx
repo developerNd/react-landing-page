@@ -261,7 +261,7 @@ const Clients = () => {
         </div>
 
         {/* Call to Action Section */}
-        <div className="max-w-5xl mx-auto mt-14 text-center px-4">
+        <div className="max-w-5xl mx-auto mt-14 text-center">
           {/* Desktop View - Two lines */}
           <div className="hidden md:block">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-3 leading-tight">
@@ -285,10 +285,10 @@ const Clients = () => {
 
           {/* Mobile View - LARGER TEXT */}
           <div className="block md:hidden">
-            <h3 className="text-[30px] font-bold text-blue-900 leading-tight mb-1">
+            <h3 className="text-[27px] font-bold text-blue-900 leading-tight ">
               In Just 3 Days... You Can Start
             </h3>
-            <h3 className="text-[30px] font-bold text-blue-900 leading-tight mb-1">
+            <h3 className="text-[27px] font-bold text-blue-900 leading-tight ">
               Getting{" "}
               <span className="px-2" style={{ backgroundColor: "#FFFECD" }}>
                 <span className="underline decoration-2 decoration-blue-900">
@@ -297,7 +297,7 @@ const Clients = () => {
                 Leads
               </span>
             </h3>
-            <h3 className="text-[30px] font-bold text-blue-900 leading-tight">
+            <h3 className="text-[27px] font-bold text-blue-900 leading-tight">
               <span className="px-2" style={{ backgroundColor: "#FFFECD" }}>
                 & High Ticket Sales!!
               </span>
@@ -310,7 +310,7 @@ const Clients = () => {
       <div className="bg-gray-100 -mt-8 pb-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Top Heading - FIXED DESKTOP COLOR */}
-          <div className="text-center mb-4 px-4">
+          <div className="text-center mb-4">
             {/* Desktop View - WITH CORRECT COLOR */}
             <div className="hidden md:block">
               <h2
@@ -621,7 +621,7 @@ const Clients = () => {
           </div>
 
           {/* Bottom CTA Section */}
-          <div className="flex flex-col items-center gap-6 mt-12 px-4">
+          <div className="flex flex-col items-center gap-6 px-4">
             {/* Enroll Button */}
             <div className="relative w-full sm:w-auto">
               <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg sm:text-xl md:text-2xl px-8 sm:px-12 py-3 sm:py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden w-full sm:w-auto">

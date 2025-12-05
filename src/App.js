@@ -3,7 +3,7 @@ import { Hero, Clients, ReverseFunnel, Agenda, Bonuses, Pricing, FAQ } from './c
 
 function App() {
   return (
-    <div className="App relative px-[10px] pb-32">
+    <div className="App relative pb-4 lg:pb-10">
       <Hero />        
       <Clients />
       <ReverseFunnel />

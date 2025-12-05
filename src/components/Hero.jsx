@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-white pb-8 relative overflow-hidden">
+    <div className="bg-white pb-8 relative overflow-hidden px-[10px]">
       {/* Background Pattern - Slightly larger squares with thinner lines */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* Vertical Lines - 35 lines for slightly larger squares, thinner lines */}

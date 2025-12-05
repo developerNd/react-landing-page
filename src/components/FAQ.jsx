@@ -36,11 +36,11 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-white py-16 px-4">
+    <div className="bg-[#F5F6F8] py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-[27px] md:text-4xl font-bold text-blue-900 mb-4">
             <span className="bg-yellow-200 px-2">Frequently</span> Asked Questions
           </h2>
         </div>
@@ -55,12 +55,13 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg overflow-hidden"
+              style={{ boxShadow: "0 2px 10px rgb(0 0 0 / .1)" }}
             >
               {/* Question Button */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition"
+                className="w-full flex items-center justify-between p-[16px] text-left hover:bg-gray-50 transition border-b border-[#ddd]"
               >
                 <h3 className="text-sm md:text-base font-bold text-gray-900 pr-4">
                   {faq.question}

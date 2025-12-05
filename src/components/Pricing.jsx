@@ -14,7 +14,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="bg-[#F9FAFB] py-10 px-4">
+    <div className="bg-[#FFF] py-10 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Top Heading - Mobile: 2 lines with Caveat font, Desktop: 1 line */}
         <div className="text-center mb-6">

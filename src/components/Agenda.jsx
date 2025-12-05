@@ -49,16 +49,16 @@ const Agenda = () => {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] py-12 px-4">
+    <div className="bg-[#FFFFFF] py-12 p-[10px]">
       <div className="max-w-7xl mx-auto">
         {/* Top Heading - Mobile: 2 lines, Desktop: 2 lines */}
         <div className="text-center mb-8">
           {/* Mobile View - 2 lines with yellow background */}
           <div className="md:hidden">
-            <h2 className="text-3xl font-bold text-blue-900 leading-tight">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               Results Driven Agenda For <span className="bg-[#FFFECD]">3-</span>
             </h2>
-            <h2 className="text-3xl font-bold text-blue-900 leading-tight">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               <span className="bg-[#FFFECD]">Day High-Ticket</span> Sprint
             </h2>
           </div>
@@ -75,7 +75,7 @@ const Agenda = () => {
         </div>
 
         {/* Underline decoration */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-2">
           <img src={underline} alt="" className="h-1 w-40" />
         </div>
 

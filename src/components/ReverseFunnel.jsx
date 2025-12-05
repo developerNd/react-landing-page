@@ -47,22 +47,22 @@ const ReverseFunnel = () => {
         <div className="text-center mb-6">
           {/* Mobile View - 4 lines with NO horizontal padding */}
           <div className="md:hidden -mx-4 px-0">
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               After <span className="bg-[#FFFECD]">65+ Crores In Sales</span>
             </h2>
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight ">
               The Only System{" "}
               <span className="underline decoration-4 decoration-blue-900">
                 You'll Ever
               </span>
             </h2>
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               <span className="underline decoration-4 decoration-blue-900">
                 Need
               </span>{" "}
               To Hit 1 CR Rapidly In
             </h2>
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight px-2">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               2025!
             </h2>
           </div>

@@ -64,19 +64,19 @@ const Bonuses = () => {
   ];
 
   return (
-    <div className="bg-[#F5F6F8] py-12 px-4">
+    <div className="bg-[#F5F6F8] py-12 p-[20px]">
       <div className="max-w-7xl mx-auto">
         {/* Top Heading - Mobile: 3 lines, Desktop: 1 line */}
         <div className="text-center mb-6">
           {/* Mobile View - 3 lines */}
           <div className="md:hidden">
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               Get <strong>INSANE</strong> Bonuses
             </h2>
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               <span className="bg-[#FFFECD]">(Previously Sold For</span>
             </h2>
-            <h2 className="text-[32px] font-bold text-blue-900 leading-tight">
+            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
               <span className="bg-[#FFFECD]">₹24,997)</span>
             </h2>
           </div>
