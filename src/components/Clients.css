@@ -23,15 +23,23 @@
   animation: shimmer 3s infinite;
 }
 
-@keyframes scroll {
+/* Animated arrow path animation */
+@keyframes drawArrowPath {
   0% {
-    transform: translateX(0);
+    stroke-dashoffset: 2000;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(calc(-100%));
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
 }
 
-.scrolling-carousel .flex {
-  animation: scroll 40s linear infinite;
+.animated-arrow-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawArrowPath 3s ease-in-out infinite;
 }

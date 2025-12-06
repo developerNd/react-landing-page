@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Clients.css";
 
-
 const Clients = () => {
-
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
+  const offsetRef = useRef(0);
 
   const clients = [
     {
@@ -78,7 +79,53 @@ const Clients = () => {
     },
   ];
 
-  
+  const cardWidth = 330;
+  const gap = 32;
+  const cardTotalWidth = cardWidth + gap;
+  const totalWidth = clients.length * cardTotalWidth;
+
+  // Smooth continuous scroll animation using direct DOM manipulation
+  useEffect(() => {
+    const speed = 0.5; // Pixels per frame
+
+    const animate = () => {
+      if (containerRef.current) {
+        offsetRef.current += speed;
+
+        // Reset when we've scrolled through one complete set
+        if (offsetRef.current >= totalWidth) {
+          offsetRef.current = 0;
+        }
+
+        // Apply transform directly to DOM
+        containerRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [totalWidth]);
+
+  const handlePrevious = () => {
+    offsetRef.current -= cardTotalWidth;
+    if (offsetRef.current < 0) {
+      offsetRef.current = totalWidth - cardTotalWidth;
+    }
+  };
+
+  const handleNext = () => {
+    offsetRef.current += cardTotalWidth;
+    if (offsetRef.current >= totalWidth) {
+      offsetRef.current = 0;
+    }
+  };
 
   const infiniteClients = [...clients, ...clients, ...clients];
 
@@ -93,19 +140,43 @@ const Clients = () => {
 
           {/* Carousel Container */}
           <div className="relative max-w-[1088px] mx-auto">
+            {/* Previous Button */}
+            <button
+              onClick={handlePrevious}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 rounded-full p-2 hover:bg-gray-200 transition-colors"
+              aria-label="Previous clients"
+            >
+              <svg
+                className="w-8 h-8 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
 
-
-            <div className="overflow-hidden py-8 scrolling-carousel">
+            {/* Cards Container */}
+            <div className="overflow-hidden py-8">
               <div
+                ref={containerRef}
                 className="flex gap-8"
+                style={{
+                  willChange: "transform",
+                }}
               >
                 {infiniteClients.map((client, index) => (
                   <div
                     key={`${client.id}-${index}`}
-                    className="flex-shrink-0 w-[320px]"
+                    className="flex-shrink-0 w-[330px]"
                   >
-                    <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center h-[320px]">
-                      <div className="w-28 h-28 rounded-full overflow-hidden mb-5 border-4 border-gray-100 flex-shrink-0">
+                    <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center h-[330px]">
+                      <div className="w-[120px] h-[120px] rounded-full overflow-hidden mb-5 border-4 border-gray-100 flex-shrink-0">
                         <img
                           src={client.image}
                           alt={client.name}
@@ -146,7 +217,26 @@ const Clients = () => {
               </div>
             </div>
 
-
+            {/* Next Button */}
+            <button
+              onClick={handleNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 rounded-full p-2 hover:bg-gray-200 transition-colors"
+              aria-label="Next clients"
+            >
+              <svg
+                className="w-8 h-8 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -302,7 +392,11 @@ const Clients = () => {
             </div>
 
             <div className="flex justify-center">
-              <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
+              <img
+                src="/assets/images/underline.png"
+                alt=""
+                className="h-1 w-40"
+              />
             </div>
           </div>
 
@@ -357,9 +451,254 @@ const Clients = () => {
                       e.target.style.display = "none";
                     }}
                   />
+
+                  {/* Animated Arrow Annotations - SWAPPED POSITIONS */}
+
+                  {/* Down-Left Arrow NOW ON RIGHT - DESKTOP */}
+                  <div
+                    className="hidden md:block absolute"
+                    style={{ top: "-20px", right: "-20px" }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 500 500"
+                      width="100"
+                      height="100"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={{ transform: "rotate(-10deg)" }}
+                    >
+                      <defs>
+                        <clipPath id="arrow_desktop_right_clip">
+                          <rect width="500" height="500" x="0" y="0"></rect>
+                        </clipPath>
+                      </defs>
+                      <g clipPath="url(#arrow_desktop_right_clip)">
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,95.05500030517578,425.7869873046875)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-25.740999221801758,-23.406999588012695 C-24.871000289916992,-7.802000045776367 -24,7.802999973297119 -23.1299991607666,23.406999588012695 C-10.505999565124512,8.527999877929688 6.828000068664551,-2.2929999828338623 25.739999771118164,-7.099999904632568"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,255.5500030517578,240.7790069580078)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M175.13499450683594,-189.9739990234375 C161.4409942626953,-148.10299682617188 135.91700744628906,-110.1719970703125 102.28600311279297,-81.71700286865234 C88.3270034790039,-69.90599822998047 71.69999694824219,-59.28799819946289 53.41699981689453,-59.57899856567383 C35.1349983215332,-59.87099838256836 16.31800079345703,-75.51100158691406 18.886999130249023,-93.61399841308594 C21.636999130249023,-112.99099731445312 47.48699951171875,-122.16200256347656 65.15899658203125,-113.75299835205078 C82.83100128173828,-105.34400177001953 92.38600158691406,-85.58799743652344 95.91899871826172,-66.33899688720703 C100.44100189208984,-41.70600128173828 97.14399719238281,-15.699999809265137 86.62100219726562,7.026000022888184 C78.4280014038086,24.7189998626709 65.4280014038086,40.79600143432617 47.900001525878906,49.334999084472656 C30.371999740600586,57.874000549316406 8.015999794006348,57.724998474121094 -7.619999885559082,46.077999114990234 C-23.256999969482422,34.43000030517578 -29.490999221801758,10.54699993133545 -18.923999786376953,-5.839000225067139 C-3.9159998893737793,-29.113000869750977 36.314998626708984,-23.327999114990234 49.97800064086914,0.7599999904632568 C63.64099884033203,24.847999572753906 54.209999084472656,56.983001708984375 34.53099822998047,76.46800231933594 C14.852999687194824,95.9530029296875 -12.673999786376953,105.17500305175781 -39.69499969482422,111.23999786376953 C-66.71700286865234,117.30400085449219 -94.58100128173828,120.93299865722656 -120.00499725341797,131.91299438476562 C-145.42799377441406,142.89199829101562 -168.83099365234375,163.00799560546875 -175.13499450683594,189.9739990234375"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+
+                  {/* Down-Left Arrow NOW ON RIGHT - MOBILE */}
+                  <div
+                    className="md:hidden absolute"
+                    style={{
+                      top: "-30px",
+                      right: "-20px",
+                      transform: "rotate(-10deg)",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 500 500"
+                      width="90"
+                      height="90"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        <clipPath id="arrow_mobile_right_clip">
+                          <rect width="500" height="500" x="0" y="0"></rect>
+                        </clipPath>
+                      </defs>
+                      <g clipPath="url(#arrow_mobile_right_clip)">
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,95.05500030517578,425.7869873046875)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-25.740999221801758,-23.406999588012695 C-24.871000289916992,-7.802000045776367 -24,7.802999973297119 -23.1299991607666,23.406999588012695 C-10.505999565124512,8.527999877929688 6.828000068664551,-2.2929999828338623 25.739999771118164,-7.099999904632568"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,255.5500030517578,240.7790069580078)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M175.13499450683594,-189.9739990234375 C161.4409942626953,-148.10299682617188 135.91700744628906,-110.1719970703125 102.28600311279297,-81.71700286865234 C88.3270034790039,-69.90599822998047 71.69999694824219,-59.28799819946289 53.41699981689453,-59.57899856567383 C35.1349983215332,-59.87099838256836 16.31800079345703,-75.51100158691406 18.886999130249023,-93.61399841308594 C21.636999130249023,-112.99099731445312 47.48699951171875,-122.16200256347656 65.15899658203125,-113.75299835205078 C82.83100128173828,-105.34400177001953 92.38600158691406,-85.58799743652344 95.91899871826172,-66.33899688720703 C100.44100189208984,-41.70600128173828 97.14399719238281,-15.699999809265137 86.62100219726562,7.026000022888184 C78.4280014038086,24.7189998626709 65.4280014038086,40.79600143432617 47.900001525878906,49.334999084472656 C30.371999740600586,57.874000549316406 8.015999794006348,57.724998474121094 -7.619999885559082,46.077999114990234 C-23.256999969482422,34.43000030517578 -29.490999221801758,10.54699993133545 -18.923999786376953,-5.839000225067139 C-3.9159998893737793,-29.113000869750977 36.314998626708984,-23.327999114990234 49.97800064086914,0.7599999904632568 C63.64099884033203,24.847999572753906 54.209999084472656,56.983001708984375 34.53099822998047,76.46800231933594 C14.852999687194824,95.9530029296875 -12.673999786376953,105.17500305175781 -39.69499969482422,111.23999786376953 C-66.71700286865234,117.30400085449219 -94.58100128173828,120.93299865722656 -120.00499725341797,131.91299438476562 C-145.42799377441406,142.89199829101562 -168.83099365234375,163.00799560546875 -175.13499450683594,189.9739990234375"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+
+                  {/* Right Arrow NOW ON LEFT - DESKTOP */}
+                  <div
+                    className="hidden md:block absolute"
+                    style={{
+                      top: "290px",
+                      left: "-100px",
+                      transform: "scaleY(-1)",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 500 500"
+                      width="120"
+                      height="120"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        <clipPath id="arrow_desktop_left_clip">
+                          <rect width="500" height="500" x="0" y="0"></rect>
+                        </clipPath>
+                      </defs>
+                      <g clipPath="url(#arrow_desktop_left_clip)">
+                        <g
+                          transform="matrix(0.9999988079071045,0,0,0.9999988079071045,0.000518798828125,0.0003662109375)"
+                          opacity="1"
+                        >
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,423.6669921875,310.82501220703125)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-21.969999313354492,-23.840999603271484 C-8.01099967956543,-18.031999588012695 6.888999938964844,-14.491000175476074 21.9689998626709,-13.397000312805176 C10.616000175476074,-2.4019999504089355 0.7919999957084656,10.168999671936035 -7.135000228881836,23.840999603271484"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,243.42300415039062,251.12600708007812)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-185.56300354003906,-89.73200225830078 C-189.13800048828125,-68.2229995727539 -190.98500061035156,-45.99300003051758 -186.06300354003906,-24.750999450683594 C-181.13999938964844,-3.509999990463257 -168.60899353027344,16.788999557495117 -149.28500366210938,26.889999389648438 C-129.96200561523438,36.99100112915039 -103.63300323486328,34.5890007019043 -89.22200012207031,18.22599983215332 C-74.55899810791016,1.5759999752044678 -79.97899627685547,-30.684999465942383 -101.59500122070312,-35.68600082397461 C-113.5479965209961,-38.45199966430664 -126.45899963378906,-32.12300109863281 -133.4739990234375,-22.058000564575195 C-140.48800659179688,-11.993000030517578 -142.1929931640625,1.0740000009536743 -140.32899475097656,13.199999809265137 C-135.5030059814453,44.606998443603516 -108.43099975585938,69.08899688720703 -78.37799835205078,79.41100311279297 C-48.32500076293945,89.73300170898438 -15.607000350952148,88.31500244140625 16.014999389648438,85.18900299072266 C75.23400115966797,79.33599853515625 133.89999389648438,67.90699768066406 190.98500061035156,51.10100173950195"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+
+                  {/* Right Arrow NOW ON LEFT - MOBILE */}
+                  <div
+                    className="md:hidden absolute"
+                    style={{
+                      top: "180px",
+                      left: "-70px",
+                      transform: "scaleY(-1) rotate(15deg)",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 500 500"
+                      width="100"
+                      height="100"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        <clipPath id="arrow_mobile_left_clip">
+                          <rect width="500" height="500" x="0" y="0"></rect>
+                        </clipPath>
+                      </defs>
+                      <g clipPath="url(#arrow_mobile_left_clip)">
+                        <g
+                          transform="matrix(0.9999988079071045,0,0,0.9999988079071045,0.000518798828125,0.0003662109375)"
+                          opacity="1"
+                        >
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,423.6669921875,310.82501220703125)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-21.969999313354492,-23.840999603271484 C-8.01099967956543,-18.031999588012695 6.888999938964844,-14.491000175476074 21.9689998626709,-13.397000312805176 C10.616000175476074,-2.4019999504089355 0.7919999957084656,10.168999671936035 -7.135000228881836,23.840999603271484"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                        <g transform="matrix(1,0,0,1,0,0)" opacity="1">
+                          <g
+                            opacity="1"
+                            transform="matrix(1,0,0,1,243.42300415039062,251.12600708007812)"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              fillOpacity="0"
+                              stroke="rgb(255,0,24)"
+                              strokeOpacity="1"
+                              strokeWidth="13"
+                              d="M-185.56300354003906,-89.73200225830078 C-189.13800048828125,-68.2229995727539 -190.98500061035156,-45.99300003051758 -186.06300354003906,-24.750999450683594 C-181.13999938964844,-3.509999990463257 -168.60899353027344,16.788999557495117 -149.28500366210938,26.889999389648438 C-129.96200561523438,36.99100112915039 -103.63300323486328,34.5890007019043 -89.22200012207031,18.22599983215332 C-74.55899810791016,1.5759999752044678 -79.97899627685547,-30.684999465942383 -101.59500122070312,-35.68600082397461 C-113.5479965209961,-38.45199966430664 -126.45899963378906,-32.12300109863281 -133.4739990234375,-22.058000564575195 C-140.48800659179688,-11.993000030517578 -142.1929931640625,1.0740000009536743 -140.32899475097656,13.199999809265137 C-135.5030059814453,44.606998443603516 -108.43099975585938,69.08899688720703 -78.37799835205078,79.41100311279297 C-48.32500076293945,89.73300170898438 -15.607000350952148,88.31500244140625 16.014999389648438,85.18900299072266 C75.23400115966797,79.33599853515625 133.89999389648438,67.90699768066406 190.98500061035156,51.10100173950195"
+                              className="animated-arrow-path"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
                 </div>
 
-                {/* Bottom Left Text - ONLY VISIBLE ON MOBILE */}
+                {/* Bottom Left Text sections remain the same... */}
                 <div
                   className="absolute left-0 md:hidden"
                   style={{
