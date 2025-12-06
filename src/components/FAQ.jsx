@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import underline from "../assets/images/underline.png";
+
 
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState([]);
@@ -53,7 +53,7 @@ const FAQ = () => {
 
         {/* Underline decoration */}
         <div className="flex justify-center mb-8">
-          <img src={underline} alt="" className="h-1 w-40" />
+          <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
         </div>
 
         {/* FAQ Accordion - Increased max width with enhanced shadow */}

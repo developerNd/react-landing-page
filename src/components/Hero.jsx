@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import liveIcon from "../assets/images/live-icon.png";
-import underline from "../assets/images/underline.png";
-import introVideo from "../assets/videos/intro.mp4";
+
 import "./Hero.css";
 
 const Hero = () => {
@@ -15,7 +13,9 @@ const Hero = () => {
       setCurrentWord((prev) => (prev + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
+
+
 
   const handlePlayVideo = () => {
     console.log("Play button clicked");
@@ -42,51 +42,17 @@ const Hero = () => {
   return (
     <div className="bg-white pb-8 relative overflow-hidden px-[10px]">
       {/* Background Pattern - Slightly larger squares with thinner lines */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        {/* Vertical Lines - 35 lines for slightly larger squares, thinner lines */}
-        {[...Array(35)].map((_, i) => (
-          <div
-            key={`v-${i}`}
-            className="absolute top-0 bottom-0 bg-gray-400"
-            style={{
-              left: `${(i + 1) * (100 / 36)}%`,
-              width: "0.5px",
-            }}
-          />
-        ))}
-        {/* Horizontal Lines - 35 lines for slightly larger squares, thinner lines */}
-        {[...Array(35)].map((_, i) => (
-          <div
-            key={`h-${i}`}
-            className="absolute left-0 right-0 bg-gray-400"
-            style={{
-              top: `${(i + 1) * (100 / 36)}%`,
-              height: "0.5px",
-            }}
-          />
-        ))}
-      </div>
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-grid"></div>
 
       {/* Content - Relative to appear above background */}
       <div className="relative z-10">
         {/* Top Banner - Updated gradient with #3A51A6 to #0F2C80 */}
         <div className="flex justify-center">
           <div
-            className="text-white rounded-b-2xl mx-[5px] py-[10px] px-[20px] sm:py-[25px] sm:px-[48px]"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, #3A51A6 34%, #092E4E 100%)",
-            }}
+            className="text-white rounded-b-2xl mx-[5px] py-[10px] px-[20px] sm:py-[25px] sm:px-[48px] top-banner"
           >
             <p
-              className="text-center whitespace-normal sm:whitespace-nowrap"
-              style={{
-                fontFamily: "Instrument Sans",
-                fontWeight: 600,
-                fontSize: "clamp(16px, 3vw, 20px)",
-                lineHeight: "clamp(20px, 4vw, 21px)",
-                color: "rgb(252, 254, 255)",
-              }}
+              className="text-center whitespace-normal sm:whitespace-nowrap top-banner-text"
             >
               ⏰ Give Me 21 Days & I'll Show You How To...
             </p>
@@ -101,23 +67,12 @@ const Hero = () => {
             <div className="flex flex-wrap items-center justify-center gap-1 md:gap-0">
               <span
                 key={currentWord}
-                className="ms-6 text-[22px] sm:text-2xl md:text-5xl font-bold inline-block w-20 sm:w-28 md:w-44 text-center"
-                style={{
-                  animation: "slideUpSmall 0.5s ease-out forwards",
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 900,
-                  color: "rgb(15, 44, 128)",
-                }}
+                className="ms-6 text-[22px] sm:text-2xl md:text-5xl font-bold inline-block w-20 sm:w-28 md:w-44 text-center slide-up animated-word-style"
               >
                 {words[currentWord]}
               </span>
               <span
-                className="text-[22px] sm:text-2xl md:text-5xl md:ml-2 text-center"
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 900,
-                  color: "rgb(15, 44, 128)",
-                }}
+                className="text-[22px] sm:text-2xl md:text-5xl md:ml-2 text-center main-heading-span-2"
               >
                 Your Coaching Business To
               </span>
@@ -126,25 +81,12 @@ const Hero = () => {
             {/* Line 2 - Updated color to #0F2C80 */}
             <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
               <span
-                className="inline-block px-2 sm:px-3 py-1 text-[21px] sm:text-2xl md:text-5xl font-bold"
-                style={{
-                  background: "linear-gradient(to right, #FFFECA, #FFFDB3)",
-                  borderTopLeftRadius: "12px",
-                  borderBottomRightRadius: "12px",
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 900,
-                  color: "rgb(8, 22, 64)",
-                }}
+                className="inline-block px-2 sm:px-3 py-1 text-[21px] sm:text-2xl md:text-5xl font-bold main-heading-span-3"
               >
                 10 Lakhs/Month
               </span>
               <span
-                className="text-[21px] sm:text-2xl md:text-5xl text-center"
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 900,
-                  color: "rgb(15, 44, 128)",
-                }}
+                className="text-[21px] sm:text-2xl md:text-5xl text-center main-heading-span-4"
               >
                 PROFIT Using Army Of
               </span>
@@ -153,12 +95,7 @@ const Hero = () => {
             {/* Line 3 - Updated color to #0F2C80 */}
             <div>
               <span
-                className="text-[22px] sm:text-2xl md:text-5xl underline decoration-2"
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 900,
-                  color: "rgb(15, 44, 128)",
-                }}
+                className="text-[22px] sm:text-2xl md:text-5xl underline decoration-2 main-heading-span-5"
               >
                 A.I. Agents.
               </span>
@@ -167,15 +104,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <p
-            style={{
-              fontFamily: "Instrument Sans",
-              fontStyle: "italic",
-              fontWeight: 500,
-              fontSize: "clamp(20px, 4vw, 26px)",
-              lineHeight: "clamp(24px, 5vw, 33px)",
-              color: "rgb(69, 69, 69)",
-            }}
-            className="mb-[20px]"
+            className="mb-[20px] subheading-text"
           >
             ... 10 Minutes a day will change your entire Business.
           </p>
@@ -183,20 +112,14 @@ const Hero = () => {
           {/* Features with Two-Color Icons - Updated colors to #BCC7F9 outer and #1C348F inner */}
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 mb-[20px] sm:mb-16">
             <div
-              className="bg-white px-[12px] sm:px-6 py-[12px] sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 justify-start border border-[#E9E9E9]"
-              style={{
-                boxShadow:
-                  "0 3px 8px 0 rgba(229.09624481201172,210.66893816408904,210.66893816408904,.5)",
-              }}
+              className="bg-white px-[12px] sm:px-6 py-[12px] sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 justify-start border border-[#E9E9E9] feature-item-card"
             >
               <div className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center flex-shrink-0">
                 <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ backgroundColor: "#BCC7F9" }}
+                  className="absolute inset-0 rounded-full feature-icon-bg-outer"
                 ></div>
                 <div
-                  className="absolute inset-1 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#1C348F" }}
+                  className="absolute inset-1 rounded-full flex items-center justify-center feature-icon-bg-inner"
                 >
                   <svg
                     className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"
@@ -214,32 +137,20 @@ const Hero = () => {
                 </div>
               </div>
               <span
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 2.5vw, 19px)",
-                  lineHeight: "clamp(21px, 3.5vw, 29px)",
-                  color: "rgb(69, 69, 69)",
-                }}
+                className="feature-item-text"
               >
                 NO Paid Ads
               </span>
             </div>
             <div
-              className="bg-white px-[12px] sm:px-6 py-[12px] sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 justify-start border border-[#E9E9E9]"
-              style={{
-                boxShadow:
-                  "0 3px 8px 0 rgba(229.09624481201172,210.66893816408904,210.66893816408904,.5)",
-              }}
+              className="bg-white px-[12px] sm:px-6 py-[12px] sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 justify-start border border-[#E9E9E9] feature-item-card"
             >
               <div className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center flex-shrink-0">
                 <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ backgroundColor: "#BCC7F9" }}
+                  className="absolute inset-0 rounded-full feature-icon-bg-outer"
                 ></div>
                 <div
-                  className="absolute inset-1 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#1C348F" }}
+                  className="absolute inset-1 rounded-full flex items-center justify-center feature-icon-bg-inner"
                 >
                   <svg
                     className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"
@@ -257,13 +168,7 @@ const Hero = () => {
                 </div>
               </div>
               <span
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 2.5vw, 19px)",
-                  lineHeight: "clamp(21px, 3.5vw, 29px)",
-                  color: "rgb(69, 69, 69)",
-                }}
+                className="feature-item-text"
               >
                 NO Endless Content
               </span>
@@ -277,12 +182,10 @@ const Hero = () => {
             >
               <div className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center flex-shrink-0">
                 <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ backgroundColor: "#BCC7F9" }}
+                  className="absolute inset-0 rounded-full feature-icon-bg-outer"
                 ></div>
                 <div
-                  className="absolute inset-1 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#1C348F" }}
+                  className="absolute inset-1 rounded-full flex items-center justify-center feature-icon-bg-inner"
                 >
                   <svg
                     className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"
@@ -300,13 +203,7 @@ const Hero = () => {
                 </div>
               </div>
               <span
-                style={{
-                  fontFamily: "Instrument Sans",
-                  fontWeight: 400,
-                  fontSize: "clamp(14px, 2.5vw, 19px)",
-                  lineHeight: "clamp(21px, 3.5vw, 29px)",
-                  color: "rgb(69, 69, 69)",
-                }}
+                className="feature-item-text"
               >
                 NO Road Activity
               </span>
@@ -326,7 +223,7 @@ const Hero = () => {
                     style={{ display: isPlaying ? "block" : "none" }}
                     onEnded={() => setIsPlaying(false)}
                   >
-                    <source src={introVideo} type="video/mp4" />
+                    <source src="/assets/videos/intro.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
 
@@ -364,18 +261,11 @@ const Hero = () => {
                 <div className="w-full md:w-auto md:-mt-16 md:-ml-1">
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full md:w-[565px]">
                     <div
-                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
-                      style={{
-                        boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
-                      }}
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9] event-detail-card"
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                          style={{
-                            background:
-                              "linear-gradient(to bottom right, #1E2A56, #6279E1)",
-                          }}
+                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0 event-icon-bg"
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -393,25 +283,12 @@ const Hero = () => {
                         </div>
                         <div className="text-left">
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 400,
-                              fontSize: "clamp(12px, 2vw, 12px)",
-                              lineHeight: "clamp(15px, 2.5vw, 18px)",
-                              color: "rgb(102, 126, 234)",
-                              textTransform: "uppercase",
-                            }}
+                            className="event-detail-label"
                           >
                             Date
                           </p>
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 700,
-                              fontSize: "clamp(17px, 2.5vw, 19px)",
-                              lineHeight: "clamp(21px, 3.5vw, 29px)",
-                              color: "rgb(42, 42, 42)",
-                            }}
+                            className="event-detail-value"
                           >
                             10th - 12th Oct
                           </p>
@@ -420,18 +297,11 @@ const Hero = () => {
                     </div>
 
                     <div
-                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
-                      style={{
-                        boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
-                      }}
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9] event-detail-card"
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                          style={{
-                            background:
-                              "linear-gradient(to bottom right, #1E2A56, #6279E1)",
-                          }}
+                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0 event-icon-bg"
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -449,25 +319,12 @@ const Hero = () => {
                         </div>
                         <div className="text-left">
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 400,
-                              fontSize: "clamp(12px, 2vw, 12px)",
-                              lineHeight: "clamp(15px, 2.5vw, 18px)",
-                              color: "rgb(102, 126, 234)",
-                              textTransform: "uppercase",
-                            }}
+                            className="event-detail-label"
                           >
                             Time
                           </p>
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 700,
-                              fontSize: "clamp(17px, 2.5vw, 19px)",
-                              lineHeight: "clamp(21px, 3.5vw, 29px)",
-                              color: "rgb(42, 42, 42)",
-                            }}
+                            className="event-detail-value"
                           >
                             7 PM - 9 PM
                           </p>
@@ -476,18 +333,11 @@ const Hero = () => {
                     </div>
 
                     <div
-                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
-                      style={{
-                        boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
-                      }}
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9] event-detail-card"
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                          style={{
-                            background:
-                              "linear-gradient(to bottom right, #1E2A56, #6279E1)",
-                          }}
+                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0 event-icon-bg"
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -511,25 +361,12 @@ const Hero = () => {
                         </div>
                         <div className="text-left">
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 400,
-                              fontSize: "clamp(12px, 2vw, 12px)",
-                              lineHeight: "clamp(15px, 2.5vw, 18px)",
-                              color: "rgb(102, 126, 234)",
-                              textTransform: "uppercase",
-                            }}
+                            className="event-detail-label"
                           >
                             Where
                           </p>
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 700,
-                              fontSize: "clamp(17px, 2.5vw, 19px)",
-                              lineHeight: "clamp(21px, 3.5vw, 29px)",
-                              color: "rgb(42, 42, 42)",
-                            }}
+                            className="event-detail-value"
                           >
                             Zoom
                           </p>
@@ -538,18 +375,11 @@ const Hero = () => {
                     </div>
 
                     <div
-                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9]"
-                      style={{
-                        boxShadow: "0 4px 8px 0 rgb(0 0 0 / .06)",
-                      }}
+                      className="bg-white pt-[11px] pr-0 pb-[11px] pl-[8px] sm:p-4 rounded-xl border border-[#E9E9E9] event-detail-card"
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                          style={{
-                            background:
-                              "linear-gradient(to bottom right, #1E2A56, #6279E1)",
-                          }}
+                          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0 event-icon-bg"
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -567,25 +397,12 @@ const Hero = () => {
                         </div>
                         <div className="text-left">
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 400,
-                              fontSize: "clamp(12px, 2vw, 12px)",
-                              lineHeight: "clamp(15px, 2.5vw, 18px)",
-                              color: "rgb(102, 126, 234)",
-                              textTransform: "uppercase",
-                            }}
+                            className="event-detail-label"
                           >
                             Language
                           </p>
                           <p
-                            style={{
-                              fontFamily: "Instrument Sans",
-                              fontWeight: 700,
-                              fontSize: "clamp(17px, 2.5vw, 19px)",
-                              lineHeight: "clamp(21px, 3.5vw, 29px)",
-                              color: "rgb(42, 42, 42)",
-                            }}
+                            className="event-detail-value"
                           >
                             English
                           </p>
@@ -602,19 +419,12 @@ const Hero = () => {
               <div className="bg-[#F0F0FD] rounded-2xl p-6 sm:p-8 text-left shadow-lg relative border border-blue-100 border-b-2 border-b-[#151F44] mb-[20px]">
                 {/* LIVE Icon - Top Center - Fixed positioning with larger size */}
                 <div
-                  className="absolute left-1/2 transform -translate-x-1/2 z-20"
-                  style={{
-                    top: "-30px",
-                  }}
+                  className="absolute left-1/2 transform -translate-x-1/2 z-20 live-icon-container"
                 >
                   <img
-                    src={liveIcon}
+                    src="/assets/images/live-icon.png"
                     alt="Live"
-                    className="h-auto"
-                    style={{
-                      width: "clamp(350px, 40vw, 350px)",
-                      maxWidth: "350px",
-                    }}
+                    className="h-auto live-icon-img"
                   />
                 </div>
 
@@ -625,7 +435,7 @@ const Hero = () => {
                   </h3>
                   <div className="flex justify-center">
                     <img
-                      src={underline}
+                      src="/assets/images/underline.png"
                       alt=""
                       className="h-1 w-[50%] sm:w-32"
                     />
@@ -660,24 +470,11 @@ const Hero = () => {
                       </div>
                     </div>
                     <p
-                      className="leading-relaxed"
-                      style={{
-                        fontFamily: "Instrument Sans",
-                        fontWeight: 400,
-                        fontSize: "16px",
-                        lineHeight: "24px",
-                        color: "rgb(42, 42, 42)",
-                      }}
+                      className="leading-relaxed agenda-item-text"
                     >
                       How to Make{" "}
                       <strong
-                        style={{
-                          fontFamily: "Instrument Sans",
-                          fontWeight: 700,
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          color: "rgb(42, 42, 42)",
-                        }}
+                        className="agenda-item-strong"
                       >
                         10 Lakhs or More in Sales In ONE Month  
                       </strong>{" "}
@@ -711,24 +508,11 @@ const Hero = () => {
                       </div>
                     </div>
                     <p
-                      className="leading-relaxed"
-                      style={{
-                        fontFamily: "Instrument Sans",
-                        fontWeight: 400,
-                        fontSize: "16px",
-                        lineHeight: "24px",
-                        color: "rgb(42, 42, 42)",
-                      }}
+                      className="leading-relaxed agenda-item-text"
                     >
                       How to{" "}
                       <strong
-                        style={{
-                          fontFamily: "Instrument Sans",
-                          fontWeight: 700,
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          color: "rgb(42, 42, 42)",
-                        }}
+                        className="agenda-item-strong"
                       >
                         SELL Premium Offers Without Sales Calls
                       </strong>{" "}
@@ -762,24 +546,11 @@ const Hero = () => {
                       </div>
                     </div>
                     <p
-                      className="leading-relaxed"
-                      style={{
-                        fontFamily: "Instrument Sans",
-                        fontWeight: 400,
-                        fontSize: "16px",
-                        lineHeight: "24px",
-                        color: "rgb(42, 42, 42)",
-                      }}
+                      className="leading-relaxed agenda-item-text"
                     >
                       How To Create A Buying Movement That Makes{" "}
                       <strong
-                        style={{
-                          fontFamily: "Instrument Sans",
-                          fontWeight: 700,
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          color: "rgb(42, 42, 42)",
-                        }}
+                        className="agenda-item-strong"
                       >
                         People Throw Credit Cards
                       </strong>{" "}

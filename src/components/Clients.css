@@ -22,3 +22,16 @@
 .animate-shimmer {
   animation: shimmer 3s infinite;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100%));
+  }
+}
+
+.scrolling-carousel .flex {
+  animation: scroll 40s linear infinite;
+}

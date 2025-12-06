@@ -1,8 +1,16 @@
 import React from "react";
-import day1Image from "../assets/images/day1.png";
-import day2Image from "../assets/images/day2.png";
-import day3Image from "../assets/images/day3.png";
-import underline from "../assets/images/underline.png";
+
+const parseAndHighlight = (text) => {
+  const parts = text.split(/(<strong>.*?<\/strong>)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("<strong>") && part.endsWith("</strong>")) {
+      return (
+        <strong key={index}>{part.substring(8, part.length - 9)}</strong>
+      );
+    }
+    return part;
+  });
+};
 
 const Agenda = () => {
   const days = [
@@ -10,7 +18,7 @@ const Agenda = () => {
       id: 1,
       dayNumber: "DAY 01",
       title: "Build",
-      image: day1Image,
+      image: "/assets/images/day1.png",
       points: [
         "EXACT 4-Step High-Ticket Offer Creation Formula that only TOP 1% coaches know.",
         'An ancient offer creation "law" that 99.8% people MISS out, which stops them to make more sales.',
@@ -23,7 +31,7 @@ const Agenda = () => {
       id: 2,
       dayNumber: "DAY 02",
       title: "Sell - 10 Payday Custom Roadmap",
-      image: day2Image,
+      image: "/assets/images/day2.png",
       points: [
         'Your "Reverse-math" to your NEXT 10 lakh payday.',
         "<strong>7-Figure Launch Checklist</strong> used behind every BIG launch.",
@@ -36,7 +44,7 @@ const Agenda = () => {
       id: 3,
       dayNumber: "DAY 03",
       title: "Scale Big",
-      image: day3Image,
+      image: "/assets/images/day3.png",
       points: [
         'My 40 crores "Signature-Talk" Framework.',
         "This #1 thing that absolutely EXTREME FEW PEOPLE do, but pulls in 60% more sales.",
@@ -51,7 +59,7 @@ const Agenda = () => {
   return (
     <div className="bg-[#FFFFFF] py-12 p-[10px] relative overflow-hidden">
       {/* Decorative Star - Right Side (Golden) - Top */}
-      <div className="absolute -right-1 top-24 z-0">
+      <div className="absolute -right-1 top-24 z-0 agenda-star-right">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="52"
@@ -93,7 +101,7 @@ const Agenda = () => {
       </div>
 
       {/* Decorative Star - Left Side (Purple) - Top */}
-      <div className="absolute left-0 top-0 z-0">
+      <div className="absolute left-0 top-0 z-0 agenda-star-left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"
@@ -147,7 +155,7 @@ const Agenda = () => {
       </div>
 
       {/* Decorative Arc - Right Side Bottom (Purple) - Smaller on mobile */}
-      <div className="absolute right-0 bottom-0 z-0">
+      <div className="absolute right-0 bottom-0 z-0 agenda-arc">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
@@ -203,7 +211,7 @@ const Agenda = () => {
 
         {/* Underline decoration */}
         <div className="flex justify-center mb-4">
-          <img src={underline} alt="" className="h-1 w-40" />
+          <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
         </div>
 
         {/* Three Day Cards - Medium size */}
@@ -287,8 +295,9 @@ const Agenda = () => {
                       <p
                         className="text-base text-gray-700 leading-relaxed"
                         style={{ flex: 1 }}
-                        dangerouslySetInnerHTML={{ __html: point }}
-                      />
+                      >
+                        {parseAndHighlight(point)}
+                      </p>
                     </div>
                   ))}
                 </div>

@@ -1,2 +1,38 @@
 /* Import Caveat font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.agenda-star-right path {
+  fill: url(#paint0_linear_agenda_right);
+}
+
+.agenda-star-right stop:nth-child(1) {
+  stop-color: #FFD9A0;
+}
+
+.agenda-star-right stop:nth-child(2) {
+  stop-color: #FFF5F1;
+}
+
+.agenda-star-left path {
+  fill: url(#paint0_linear_agenda_left);
+}
+
+.agenda-star-left stop:nth-child(1) {
+  stop-color: #8957BD;
+}
+
+.agenda-star-left stop:nth-child(2) {
+  stop-color: #667EEA;
+}
+
+.agenda-arc path {
+  fill: url(#paint0_linear_agenda_bottom);
+}
+
+.agenda-arc stop:nth-child(1) {
+  stop-color: #D0BCE5;
+}
+
+.agenda-arc stop:nth-child(2) {
+  stop-color: #E7DDF2;
+}

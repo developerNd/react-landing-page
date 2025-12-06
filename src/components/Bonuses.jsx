@@ -1,17 +1,11 @@
 import React from "react";
-import underline from "../assets/images/underline.png";
-import bonus1 from "../assets/images/bonus1.png";
-import bonus2 from "../assets/images/bonus2.png";
-import bonus3 from "../assets/images/bonus3.png";
-import bonus4 from "../assets/images/bonus4.png";
-import head from "../assets/images/head.png";
-import bg from "../assets/images/bg.png";
+
 
 const Bonuses = () => {
   const bonuses = [
     {
       id: 1,
-      image: bonus1,
+      image: "/assets/images/bonus1.png",
       title: "AI Hook Creator Software:",
       price: (
         <>
@@ -27,7 +21,7 @@ const Bonuses = () => {
     },
     {
       id: 2,
-      image: bonus2,
+      image: "/assets/images/bonus2.png",
       title: "1.7 Crore Launch Step-By-Step Breakdown",
       price: "PRICELESS",
       points: [
@@ -40,7 +34,7 @@ const Bonuses = () => {
     },
     {
       id: 3,
-      image: bonus3,
+      image: "/assets/images/bonus3.png",
       title: "LIVE Pre Training Party To Kickstart Your Journey!",
       price: "PRICELESS",
       points: [
@@ -52,7 +46,7 @@ const Bonuses = () => {
     },
     {
       id: 4,
-      image: bonus4,
+      image: "/assets/images/bonus4.png",
       title: 'Private "Your Eyes Only" Workbooks & Cheat Sheets',
       price: "PRICELESS",
       points: [
@@ -135,13 +129,13 @@ const Bonuses = () => {
 
         {/* Underline decoration */}
         <div className="flex justify-center mb-6">
-          <img src={underline} alt="" className="h-1 w-40" />
+          <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
         </div>
 
         {/* Head Image - Reduced Size */}
         <div className="flex justify-center mb-8">
           <img
-            src={head}
+            src="/assets/images/head.png"
             alt="Bonuses Preview"
             className="w-full max-w-xl"
             onError={(e) => {
@@ -156,7 +150,7 @@ const Bonuses = () => {
             <div key={bonus.id} className="relative pt-5">
               {/* Background Image - Behind and slightly above the card */}
               <img
-                src={bg}
+                src="/assets/images/bg.png"
                 alt=""
                 className="absolute top-0 left-0 w-full h-auto object-contain"
                 onError={(e) => {

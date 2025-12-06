@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import pipeSystemImage from "../assets/images/pipe_system.png";
-import underline from "../assets/images/underline.png";
+
 
 const ReverseFunnel = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
@@ -9,22 +8,22 @@ const ReverseFunnel = () => {
   const testimonials = [
     {
       id: 1,
-      thumbnail: require("../assets/images/thumb1.png"),
-      video: require("../assets/videos/testimonial1.mp4"),
+      thumbnail: "/assets/images/thumb1.png",
+      video: "/assets/videos/testimonial1.mp4",
       text: '"Made 65 lakhs without ads!"',
       isPortrait: true,
     },
     {
       id: 2,
-      thumbnail: require("../assets/images/thumb2.png"),
-      video: require("../assets/videos/testimonial2.mp4"),
+      thumbnail: "/assets/images/thumb2.png",
+      video: "/assets/videos/testimonial2.mp4",
       text: '"Generated 80 lakh in two days!"',
       isPortrait: true,
     },
     {
       id: 3,
-      thumbnail: require("../assets/images/thumb3.png"),
-      video: require("../assets/videos/testimonial3.mp4"),
+      thumbnail: "/assets/images/thumb3.png",
+      video: "/assets/videos/testimonial3.mp4",
       text: '"Made so much revenue 3 days, what usually takes 6 months!"',
       isPortrait: true,
     },
@@ -131,13 +130,13 @@ const ReverseFunnel = () => {
 
         {/* Underline decoration - Reduced margin on mobile */}
         <div className="flex justify-center mb-4 md:mb-8">
-          <img src={underline} alt="" className="h-1 w-40" />
+          <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
         </div>
 
         {/* Pipe System Image - FULL WIDTH on mobile by breaking out of padding */}
         <div className="flex justify-center mb-8 -mx-4 md:mx-0">
           <img
-            src={pipeSystemImage}
+            src="/assets/images/pipe_system.png"
             alt="Reverse Funnel System Pipeline"
             className="w-full md:max-w-6xl px-1 md:px-0"
             onError={(e) => {

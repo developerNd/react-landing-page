@@ -1,23 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./Clients.css";
-import mockupImage from "../assets/images/mockup_result.png";
-import underline from "../assets/images/underline.png";
-import client1 from "../assets/images/1.png";
-import client2 from "../assets/images/2.png";
-import client3 from "../assets/images/3.png";
-import client4 from "../assets/images/4.png";
-import client5 from "../assets/images/5.png";
-import client6 from "../assets/images/6.png";
-import client7 from "../assets/images/7.png";
-import client8 from "../assets/images/8.png";
-import client9 from "../assets/images/9.png";
-import client10 from "../assets/images/10.png";
+
 
 const Clients = () => {
-  const [offset, setOffset] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const animationRef = useRef(null);
-  const containerRef = useRef(null);
+
 
   const clients = [
     {
@@ -25,126 +11,74 @@ const Clients = () => {
       name: "Jatan Shah",
       title: "Microsoft Excel and Stock Market Coach",
       followers: "188K+",
-      image: client1,
+      image: "/assets/images/1.png",
     },
     {
       id: 2,
       name: "Aarzoo Shah",
       title: "India's #1 Life Coach",
       followers: "19.5K+",
-      image: client2,
+      image: "/assets/images/2.png",
     },
     {
       id: 3,
       name: "Karthik Naidu",
       title: "SaaS Business Coach",
       followers: "22.2K+",
-      image: client3,
+      image: "/assets/images/3.png",
     },
     {
       id: 4,
       name: "Swastik Nandakumar",
       title: "Performance coach and business growth expert",
       followers: "44.7K+",
-      image: client4,
+      image: "/assets/images/4.png",
     },
     {
       id: 5,
       name: "Ankit Neerav",
       title: "Law of Attraction Coach",
       followers: "24.3K+",
-      image: client5,
+      image: "/assets/images/5.png",
     },
     {
       id: 6,
       name: "Shankar Kulkarni",
       title: "Financial Freedom & Confidence Coach",
       followers: "9,111+",
-      image: client6,
+      image: "/assets/images/6.png",
     },
     {
       id: 7,
       name: "Viral Jain",
       title: "Amazon Coach",
       followers: "11.1K+",
-      image: client7,
+      image: "/assets/images/7.png",
     },
     {
       id: 8,
       name: "Dharaneetharan",
       title: "Digital Marketing Coach",
       followers: "20.0K+",
-      image: client8,
+      image: "/assets/images/8.png",
     },
     {
       id: 9,
       name: "Omkar Phadatare",
       title: "Stock Market Coach",
       followers: "26.6K+",
-      image: client9,
+      image: "/assets/images/9.png",
     },
     {
       id: 10,
       name: "Saurav Pal",
       title: "Career Scaling Coach",
       followers: "1.53K+",
-      image: client10,
+      image: "/assets/images/10.png",
     },
   ];
 
-  const cardWidth = 320;
-  const gap = 32;
-  const cardTotalWidth = cardWidth + gap;
-  const totalWidth = clients.length * cardTotalWidth;
-
-  // Smooth continuous scroll animation
-  useEffect(() => {
-    let lastTimestamp = 0;
-    const speed = 0.3;
-
-    const animate = (timestamp) => {
-      if (lastTimestamp === 0) {
-        lastTimestamp = timestamp;
-      }
-
-      const delta = timestamp - lastTimestamp;
-      lastTimestamp = timestamp;
-
-      setOffset((prevOffset) => {
-        const newOffset = prevOffset + speed;
-
-        if (newOffset >= totalWidth) {
-          return 0;
-        }
-
-        return newOffset;
-      });
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [totalWidth]);
-
-  const handlePrevious = () => {
-    setOffset((prevOffset) => {
-      const newOffset = prevOffset - cardTotalWidth;
-      return newOffset < 0 ? totalWidth - cardTotalWidth : newOffset;
-    });
-  };
-
-  const handleNext = () => {
-    setOffset((prevOffset) => {
-      const newOffset = prevOffset + cardTotalWidth;
-      return newOffset >= totalWidth ? 0 : newOffset;
-    });
-  };
+  
 
   const infiniteClients = [...clients, ...clients, ...clients];
 
@@ -159,36 +93,11 @@ const Clients = () => {
 
           {/* Carousel Container */}
           <div className="relative max-w-[1088px] mx-auto">
-            {/* Previous Button */}
-            <button
-              onClick={handlePrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 rounded-full p-2"
-              aria-label="Previous clients"
-            >
-              <svg
-                className="w-8 h-8 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
 
-            {/* Cards Container */}
-            <div className="overflow-hidden py-8">
+
+            <div className="overflow-hidden py-8 scrolling-carousel">
               <div
-                ref={containerRef}
                 className="flex gap-8"
-                style={{
-                  transform: `translateX(-${offset}px)`,
-                  transition: "none",
-                }}
               >
                 {infiniteClients.map((client, index) => (
                   <div
@@ -237,26 +146,7 @@ const Clients = () => {
               </div>
             </div>
 
-            {/* Next Button */}
-            <button
-              onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 rounded-full p-2"
-              aria-label="Next clients"
-            >
-              <svg
-                className="w-8 h-8 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+
           </div>
         </div>
 
@@ -412,7 +302,7 @@ const Clients = () => {
             </div>
 
             <div className="flex justify-center">
-              <img src={underline} alt="" className="h-1 w-40" />
+              <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
             </div>
           </div>
 
@@ -460,7 +350,7 @@ const Clients = () => {
                 {/* Mockup Image */}
                 <div className="relative ml-20 md:ml-0">
                   <img
-                    src={mockupImage}
+                    src="/assets/images/mockup_result.png"
                     alt="Mobile phone mockup"
                     className="w-full max-w-[240px] sm:max-w-[270px] md:max-w-[290px]"
                     onError={(e) => {

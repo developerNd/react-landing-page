@@ -5,3 +5,142 @@
 * {
   font-family: 'Instrument Sans', sans-serif;
 }
+
+.bg-grid {
+  background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
+
+@keyframes slideUpSmall {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUpSmall 0.5s ease-out forwards;
+}
+
+.top-banner {
+  background-image: linear-gradient(90deg, #3A51A6 34%, #092E4E 100%);
+}
+
+.top-banner-text {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 3vw, 20px);
+  line-height: clamp(20px, 4vw, 21px);
+  color: rgb(252, 254, 255);
+}
+
+.animated-word-style {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 900;
+  color: rgb(15, 44, 128);
+}
+
+.main-heading-span-2 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 900;
+  color: rgb(15, 44, 128);
+}
+
+.main-heading-span-3 {
+  background: linear-gradient(to right, #FFFECA, #FFFDB3);
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 900;
+  color: rgb(8, 22, 64);
+}
+
+.main-heading-span-5 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 900;
+  color: rgb(15, 44, 128);
+}
+
+.subheading-text {
+  font-family: "Instrument Sans", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(20px, 4vw, 26px);
+  line-height: clamp(24px, 5vw, 33px);
+  color: rgb(69, 69, 69);
+}
+
+.feature-item-card {
+  box-shadow: 0 3px 8px 0 rgba(229.09624481201172, 210.66893816408904, 210.66893816408904, 0.5);
+}
+
+.feature-item-text {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.5vw, 19px);
+  line-height: clamp(21px, 3.5vw, 29px);
+  color: rgb(69, 69, 69);
+}
+
+.feature-icon-bg-outer {
+  background-color: #BCC7F9;
+}
+
+.feature-icon-bg-inner {
+  background-color: #1C348F;
+}
+
+.live-icon-container {
+  top: -30px;
+}
+
+.live-icon-img {
+  width: clamp(350px, 40vw, 350px);
+  max-width: 350px;
+}
+
+.event-detail-card {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / .06);
+}
+
+.event-icon-bg {
+  background: linear-gradient(to bottom right, #1E2A56, #6279E1);
+}
+
+.event-detail-label {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 2vw, 12px);
+  line-height: clamp(15px, 2.5vw, 18px);
+  color: rgb(102, 126, 234);
+  text-transform: uppercase;
+}
+
+.event-detail-value {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 2.5vw, 19px);
+  line-height: clamp(21px, 3.5vw, 29px);
+  color: rgb(42, 42, 42);
+}
+
+.agenda-item-text {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(42, 42, 42);
+}
+
+.agenda-item-strong {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(42, 42, 42);
+}

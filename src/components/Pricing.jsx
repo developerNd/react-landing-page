@@ -1,7 +1,5 @@
 import React from "react";
-import underline from "../assets/images/underline.png";
-import pricingTable from "../assets/images/pricing_table.png";
-import shubhImage from "../assets/images/man.png";
+
 import "./caveat.css";
 
 const Pricing = () => {
@@ -162,13 +160,13 @@ const Pricing = () => {
 
         {/* Underline decoration */}
         <div className="flex justify-center mb-8">
-          <img src={underline} alt="" className="h-1 w-40" />
+          <img src="/assets/images/underline.png" alt="" className="h-1 w-40" />
         </div>
 
         {/* Pricing Table Image */}
         <div className="flex justify-center mb-8">
           <img
-            src={pricingTable}
+            src="/assets/images/pricing_table.png"
             alt="Pricing Options"
             className="w-full max-w-3xl"
             onError={(e) => {
@@ -238,7 +236,7 @@ const Pricing = () => {
             {/* White Underline */}
             <div className="flex justify-center">
               <img
-                src={underline}
+                src="/assets/images/underline.png"
                 alt=""
                 className="h-1 w-44"
                 style={{ filter: "brightness(0) invert(1)" }}
@@ -263,7 +261,7 @@ const Pricing = () => {
               </div>
               {/* Placeholder for man image */}
               <img
-                src={shubhImage}
+                src="/assets/images/man.png"
                 alt="Shubh Jain"
                 className="w-80 h-auto md:w-96 -mt-4 relative z-20"
                 onError={(e) => {
