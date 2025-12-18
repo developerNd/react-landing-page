@@ -95,7 +95,7 @@ const ReverseFunnel = () => {
             <span className="underline decoration-4 decoration-blue-900">
                 You'll Ever Need
             </span>{' '}
-            To Hit 1 CR Rapidly In 2026!
+            To  Sell 10 to 15 Machines In 2026!
           </h2>
         </div>
 

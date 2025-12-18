@@ -4,32 +4,33 @@ import React, { useState } from "react";
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState([]);
 
-  const faqs = [
+ const faqs = [
     {
       id: 1,
       question: "Who is this for?",
       answer:
-        "This is only for wellness Coaches who are already earning 2 to 3 lakhs/month and want to cross 10 lakhs/month.",
+        "This is only for leaders who are already at a 3A+ level and want to close 10 to 15 machines per month.",
     },
     {
       id: 2,
       question: "How is this different from other marketing?",
       answer:
-        "It works. We have a proven track record of utilizing this for ourselves and our private clients. You don’t need to be an expert to implement these strategies.",
+        "It works. We have a proven track record of using this system for ourselves and our private clients. You don’t need to be an expert to implement these strategies.",
     },
     {
       id: 3,
       question: "Is there a guarantee?",
       answer:
-        "Yes, you get a 7-day “no questions asked” money-back guarantee in case it’s not for you. You even get to keep the bonuses.",
+        "Yes, you get a 7-day “no questions asked” money-back guarantee if it’s not for you. You also get to keep the bonuses.",
     },
     {
       id: 4,
       question: "When can I access the bonuses?",
       answer:
-        "You can access the bonuses after one on one personalized call.",
+        "You can access the bonuses after a one-on-one personalized call.",
     },
   ];
+
 
   const toggleFAQ = (index) => {
     if (openIndexes.includes(index)) {

@@ -21,10 +21,10 @@ const Agenda = () => {
       image: "/assets/images/day1.png",
       points: [
         "Simple step-by-step method to create a strong high-ticket offer.",
-        "Learn how to use A.I. tools to attract better clients without ads.",
+        "Learn how to use A.I. tools to attract better clients with smart ads.",
         "How to fix the common mistakes that stop wellness coaches from growing.",
         "Easy A.I. scripts that make people trust you even before you talk to them.",
-        "How to turn your coaching into a smooth system that works daily.",
+        "How to turn your business into a smooth system that works daily.",
         "And many more simple tools to build a solid foundation…",
       ],
     },
@@ -34,7 +34,7 @@ const Agenda = () => {
       title: "Sell – Your 21-Day Sales Growth Plan",
       image: "/assets/images/day2.png",
       points: [
-        "A simple “number plan” to understand how you can reach 8 lakhs/month.",
+        "A simple “number plan” to understand how you can reach 10–15 machines/month.",
         "Checklist you’ll follow every week to stay on track and avoid confusion.",
         "How to get serious clients who are ready to buy — without road activity.",
         "A small A.I. engine that helps you close more calls in less time.",
@@ -48,7 +48,7 @@ const Agenda = () => {
       title: "Scale – Grow Faster With A.I. Automations",
       image: "/assets/images/day3.png",
       points: [
-        "My easy-to-understand method to grow your income without working extra hours.",
+       "My easy-to-understand method to grow your income without working extra hours.",
         "One simple change that can increase your sales by 50–60%.",
         "How to create presentations that make people say “YES” naturally.",
         "How to talk to a group without sounding salesy — A.I. helps you prepare.",
@@ -194,7 +194,7 @@ const Agenda = () => {
           {/* Combined and Responsive View */}
           <h2 className="text-[27px] md:text-4xl font-bold text-blue-900 leading-tight">
             Results Driven Agenda For{' '}
-            <span className="bg-[#FFFECD] px-2">21-Day Wellness Business</span> Transformation
+            <span className="bg-[#FFFECD] px-2">10-Day Wellness Business</span> Transformation
           </h2>
         </div>
 

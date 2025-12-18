@@ -45,7 +45,7 @@ const Hero = () => {
             <p
               className="text-center whitespace-normal sm:whitespace-nowrap top-banner-text"
             >
-              ⏰ Give Me 21 Days & I'll Show You How To...
+              ⏰ Give Me 45 Minutes & I'll Show You How To...
             </p>
           </div>
         </div>
@@ -60,22 +60,22 @@ const Hero = () => {
               <span
                 className="text-[22px] sm:text-2xl md:text-5xl md:ml-2 text-center main-heading-span-2"
               >
-                Scale Your Wellness Coaching Business To
+                Scale Your Business to
               {/* </span> */}
               <span
                 className="inline-block px-2 sm:px-3 py-1 text-[21px] sm:text-2xl md:text-5xl font-bold main-heading-span-3"
               >
-                10 Lakhs/Month
+                10–15 Machines/Month
               </span>
               {/* <span
                 className="text-[21px] sm:text-2xl md:text-5xl text-center main-heading-span-4"
               > */}
-                PROFIT Using a Team Of
+               Without Offline Demonstrations or Door-to-Door Selling
               {/* </span>
               <span
                 className="text-[22px] sm:text-2xl md:text-5xl underline decoration-2 main-heading-span-5"
               > */}
-               <u> A.I. Agents.</u> 
+               {/* <u> A.I. Agents.</u>  */}
               </span>
             </div>
           </div>
@@ -84,7 +84,7 @@ const Hero = () => {
           <p
             className="mb-[20px] subheading-text"
           >
-            ... 10 Minutes a day will change your entire Business.
+            ... This Online System will change your entire Business.
           </p>
 
           {/* Features with Two-Color Icons - Updated colors to #BCC7F9 outer and #1C348F inner */}
@@ -117,7 +117,7 @@ const Hero = () => {
               <span
                 className="feature-item-text"
               >
-                NO Paid Ads
+                NO Road Demonstrations
               </span>
             </div>
             <div
@@ -148,7 +148,7 @@ const Hero = () => {
               <span
                 className="feature-item-text"
               >
-                NO Endless Content
+                NO Month Without Closings
               </span>
             </div>
             <div
@@ -183,7 +183,7 @@ const Hero = () => {
               <span
                 className="feature-item-text"
               >
-                NO Road Activity
+                NO Endless Content
               </span>
             </div>
           </div>
@@ -450,13 +450,13 @@ const Hero = () => {
                     <p
                       className="leading-relaxed agenda-item-text"
                     >
-                      How to Make{" "}
+                      How to Close{" "}
                       <strong
                         className="agenda-item-strong"
                       >
-                        10 Lakhs or More in Sales In ONE Month  
+                        10–15 Machines in ONE Month  
                       </strong>{" "}
-                      Which Would Otherwise Take You Months to HIT!
+                      and Achieve the Level Others Chase for Years!
                     </p>
                   </div>
 
@@ -492,9 +492,9 @@ const Hero = () => {
                       <strong
                         className="agenda-item-strong"
                       >
-                        Facebook Ads Aur Landing Page?
+                        How?
                       </strong>{" "}
-                      Sirf Paisa Jalta Hai. Aapke Paas Serious Client Nahi, Sirf Time-Pass Log Aate Hain. aisa 🤔??
+                      A digital selling system that positions you online, pre-qualifies buyers, and converts interest into decisions — consistently. 🤔
                     </p>
                   </div>
 

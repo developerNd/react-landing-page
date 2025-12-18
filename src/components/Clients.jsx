@@ -244,7 +244,7 @@ const Clients = () => {
         <div className="max-w-5xl mx-auto mt-14 text-center">
           {/* Combined and Responsive View */}
           <h3 className="text-[27px] sm:text-3xl lg:text-4xl font-bold text-blue-900 leading-tight">
-            In Just 21Days… You Can Start Getting{' '}
+            In Just 10 Days… You Can Start Getting{' '}
             <span
                 className="px-2 underline decoration-2 decoration-blue-900"
                 style={{ backgroundColor: '#FFFECD' }}
@@ -653,7 +653,7 @@ const Clients = () => {
                     }}
                     className="whitespace-nowrap"
                   >
-                    span of  21 Days ...
+                    span of  10 Days ...
                   </p>
                 </div>
 
@@ -727,7 +727,7 @@ const Clients = () => {
                     }}
                     className="whitespace-nowrap"
                   >
-                    span of 21 Days ...
+                    span of 10 Days ...
                   </p>
                 </div>
               </div>
