@@ -4,11 +4,10 @@ import "./caveat.css";
 
 const Pricing = () => {
   const credentials = [
-    "Sold Over 62+ Crores in Sales for clients.",
-    "TOP Players Trust Us With Their Marketing!",
-    "Managed An Email List Of Over 640,000+ Names OVERALL...",
-    "Inventor Of The Reverse Funnels",
-    "The #1 Launch Expert Of India!",
+    "Sold over 15+ Crores in Sales for clients",
+    "TOP Wellness Coaches Trust Us With Their Marketing!",
+    "Inventor Of The Reverse Attraction System",
+    "The #1 Wellness Business Expert Of India!",
   ];
 
   return (
@@ -124,19 +123,7 @@ const Pricing = () => {
                 lineHeight: "39px",
               }}
             >
-              YES! Save My Spot For The 'High Ticket
-            </h2>
-            <h2
-              style={{
-                fontFamily: "'Caveat', sans-serif",
-                fontWeight: 700,
-                fontStyle: "normal",
-                color: "rgb(15, 44, 128)",
-                fontSize: "30px",
-                lineHeight: "39px",
-              }}
-            >
-              Sprint!!'
+              YES! Save My Spot To Get in ‘Top 3% Achiever!!’
             </h2>
           </div>
 
@@ -153,7 +140,7 @@ const Pricing = () => {
               }}
               className="mb-3"
             >
-              YES! Save My Spot For The 'High Ticket Sprint!!'
+             YES! Save My Spot To Get in ‘Top 3% Achiever!!’
             </h2>
           </div>
         </div>
@@ -231,7 +218,7 @@ const Pricing = () => {
           {/* Heading */}
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Who Is Shubh and Why Should You Care?
+              Who Is Abhishek and Why Should You Care?
             </h2>
             {/* White Underline */}
             <div className="flex justify-center">

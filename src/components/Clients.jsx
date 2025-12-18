@@ -242,155 +242,52 @@ const Clients = () => {
 
         {/* Call to Action Section */}
         <div className="max-w-5xl mx-auto mt-14 text-center">
-          {/* Desktop View - Two lines */}
-          <div className="hidden md:block">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-3 leading-tight">
-              In Just 3 Days... You Can Start Getting{" "}
-              <span
-                className="px-2 underline decoration-2 decoration-blue-900 inline-block"
-                style={{ backgroundColor: "#FFFECD" }}
-              >
+          {/* Combined and Responsive View */}
+          <h3 className="text-[27px] sm:text-3xl lg:text-4xl font-bold text-blue-900 leading-tight">
+            In Just 21Days… You Can Start Getting{' '}
+            <span
+                className="px-2 underline decoration-2 decoration-blue-900"
+                style={{ backgroundColor: '#FFFECD' }}
+            >
                 Ready To Buy
-              </span>
-            </h3>
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 leading-tight">
-              <span
-                className="px-2 inline-block"
-                style={{ backgroundColor: "#FFFECD" }}
-              >
+            </span>{' '}
+            <span className="px-2" style={{ backgroundColor: '#FFFECD' }}>
                 Leads & High Ticket Sales!!
-              </span>
-            </h3>
-          </div>
-
-          {/* Mobile View - LARGER TEXT */}
-          <div className="block md:hidden">
-            <h3 className="text-[27px] font-bold text-blue-900 leading-tight ">
-              In Just 3 Days... You Can Start
-            </h3>
-            <h3 className="text-[27px] font-bold text-blue-900 leading-tight ">
-              Getting{" "}
-              <span className="px-2" style={{ backgroundColor: "#FFFECD" }}>
-                <span className="underline decoration-2 decoration-blue-900">
-                  Ready To Buy
-                </span>{" "}
-                Leads
-              </span>
-            </h3>
-            <h3 className="text-[27px] font-bold text-blue-900 leading-tight">
-              <span className="px-2" style={{ backgroundColor: "#FFFECD" }}>
-                & High Ticket Sales!!
-              </span>
-            </h3>
-          </div>
+            </span>
+          </h3>
         </div>
       </div>
 
       {/* New Section - Mockup Images with GIF */}
       <div className="bg-gray-100 -mt-8 pb-8 px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Top Heading - FIXED DESKTOP COLOR */}
-          <div className="text-center mb-4">
-            {/* Desktop View - WITH CORRECT COLOR */}
-            <div className="hidden md:block">
-              <h2
+            {/* Combined and Responsive Top Heading */}
+            <h2
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 500,
+                fontStyle: "normal",
+                color: "rgb(69, 69, 69)",
+                fontSize: "clamp(19px, 2vw, 28px)",
+                lineHeight: "clamp(28px, 2.5vw, 38px)",
+              }}
+              className="mb-3"
+            >
+              This is the ultimate Secret Book of top{" "}
+              <span
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
-                  fontWeight: 500,
-                  fontStyle: "normal",
+                  fontWeight: 700,
+                  fontStyle: "italic",
                   color: "rgb(69, 69, 69)",
-                  fontSize: "clamp(20px, 2vw, 28px)",
-                  lineHeight: "clamp(28px, 2.5vw, 38px)",
-                }}
-                className="mb-2"
-              >
-                This is the ultimate black-book of{" "}
-                <span
-                  style={{
-                    fontFamily: "'Instrument Sans', sans-serif",
-                    fontWeight: 700,
-                    fontStyle: "italic",
-                    color: "rgb(69, 69, 69)",
-                    textDecoration: "underline",
-                    textDecorationThickness: "2px",
-                  }}
-                >
-                  TOP 1% coaches
-                </span>{" "}
-                <span>(they won't</span>
-              </h2>
-              <h2
-                className="mb-3"
-                style={{
-                  fontFamily: "'Instrument Sans', sans-serif",
-                  fontWeight: 500,
-                  fontStyle: "normal",
-                  color: "rgb(69, 69, 69)",
-                  fontSize: "clamp(20px, 2vw, 28px)",
-                  lineHeight: "clamp(28px, 2.5vw, 38px)",
+                  textDecoration: "underline",
+                  textDecorationThickness: "2px",
                 }}
               >
-                reveal it to you…)
-              </h2>
-            </div>
-
-            {/* Mobile View - SMALLER TEXT */}
-            <div className="block md:hidden">
-              <h2
-                style={{
-                  fontFamily: "'Instrument Sans', sans-serif",
-                  fontWeight: 500,
-                  fontStyle: "normal",
-                  color: "rgb(69, 69, 69)",
-                  fontSize: "19px",
-                  lineHeight: "28px",
-                }}
-              >
-                This is the ultimate black-book of{" "}
-                <span
-                  style={{
-                    fontFamily: "'Instrument Sans', sans-serif",
-                    fontWeight: 700,
-                    fontStyle: "italic",
-                    color: "rgb(69, 69, 69)",
-                    fontSize: "19px",
-                    lineHeight: "28px",
-                    textDecoration: "underline",
-                    textDecorationThickness: "2px",
-                  }}
-                >
-                  TOP 1%
-                </span>
-              </h2>
-              <h2
-                className="mb-3"
-                style={{
-                  fontFamily: "'Instrument Sans', sans-serif",
-                  fontWeight: 500,
-                  fontStyle: "normal",
-                  color: "rgb(69, 69, 69)",
-                  fontSize: "19px",
-                  lineHeight: "28px",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Instrument Sans', sans-serif",
-                    fontWeight: 700,
-                    fontStyle: "italic",
-                    color: "rgb(69, 69, 69)",
-                    fontSize: "19px",
-                    lineHeight: "28px",
-                    textDecoration: "underline",
-                    textDecorationThickness: "2px",
-                  }}
-                >
-                  coaches
-                </span>{" "}
-                (they won't reveal it to you…)
-              </h2>
-            </div>
-
+                1% Wellness coaches
+              </span>{" "}
+              (they won't reveal it to you…)
+            </h2>
             <div className="flex justify-center">
               <img
                 src="/assets/images/underline.png"
@@ -398,7 +295,6 @@ const Clients = () => {
                 className="h-1 w-40"
               />
             </div>
-          </div>
 
           {/* Grid Layout */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-12">
@@ -424,18 +320,7 @@ const Clients = () => {
                     color: "rgb(11, 44, 103)",
                   }}
                 >
-                  And when you start applying these principles... your
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'Shadows Into Light', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(16px, 4vw, 20px)",
-                    lineHeight: "clamp(22px, 5vw, 26px)",
-                    color: "rgb(11, 44, 103)",
-                  }}
-                >
-                  inbox could start looking like this.
+                  And when you start applying these principles... your inloox could start looking like this.
                 </p>
               </div>
 
@@ -768,7 +653,7 @@ const Clients = () => {
                     }}
                     className="whitespace-nowrap"
                   >
-                    span of 2 hours ...
+                    span of  21 Days ...
                   </p>
                 </div>
 
@@ -842,7 +727,7 @@ const Clients = () => {
                     }}
                     className="whitespace-nowrap"
                   >
-                    span of 2 hours ...
+                    span of 21 Days ...
                   </p>
                 </div>
               </div>

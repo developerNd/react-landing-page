@@ -16,42 +16,44 @@ const Agenda = () => {
   const days = [
     {
       id: 1,
-      dayNumber: "DAY 01",
-      title: "Build",
+      dayNumber: "🌞 PHASE 01",
+      title: "Build – Set Up Your A.I. Wellness Business",
       image: "/assets/images/day1.png",
       points: [
-        "EXACT 4-Step High-Ticket Offer Creation Formula that only TOP 1% coaches know.",
-        'An ancient offer creation "law" that 99.8% people MISS out, which stops them to make more sales.',
-        "An old-school offer strategy that crushes Cold Audience and makes it almost neurologically impossible for people to not consider buying your offer.",
-        "Once you know this - creating million dollar offers & campaigns will be cake-walk!",
-        "And so much more...",
+        "Simple step-by-step method to create a strong high-ticket offer.",
+        "Learn how to use A.I. tools to attract better clients without ads.",
+        "How to fix the common mistakes that stop wellness coaches from growing.",
+        "Easy A.I. scripts that make people trust you even before you talk to them.",
+        "How to turn your coaching into a smooth system that works daily.",
+        "And many more simple tools to build a solid foundation…",
       ],
     },
     {
       id: 2,
-      dayNumber: "DAY 02",
-      title: "Sell - 10 Payday Custom Roadmap",
+      dayNumber: "🌞 PHASE 02",
+      title: "Sell – Your 21-Day Sales Growth Plan",
       image: "/assets/images/day2.png",
       points: [
-        'Your "Reverse-math" to your NEXT 10 lakh payday.',
-        "<strong>7-Figure Launch Checklist</strong> used behind every BIG launch.",
-        "How to get your dream <strong>high-ticket clients</strong> lining up to work with you before you even pitch them.",
-        "Battle-tested <strong>5 Hour Engine</strong> that makes you the most money and sales in a shorter duration.",
-        "The TOP SECRET *** technique to CRUSH your launch the very first time.",
+        "A simple “number plan” to understand how you can reach 8 lakhs/month.",
+        "Checklist you’ll follow every week to stay on track and avoid confusion.",
+        "How to get serious clients who are ready to buy — without road activity.",
+        "A small A.I. engine that helps you close more calls in less time.",
+        "Simple messages you can send to get more people to book calls.",
+        "A clear system you can repeat every month to keep sales growing.",
       ],
     },
     {
       id: 3,
-      dayNumber: "DAY 03",
-      title: "Scale Big",
+      dayNumber: "🌞 PHASE 03",
+      title: "Scale – Grow Faster With A.I. Automations",
       image: "/assets/images/day3.png",
       points: [
-        'My 40 crores "Signature-Talk" Framework.',
-        "This #1 thing that absolutely EXTREME FEW PEOPLE do, but pulls in 60% more sales.",
-        "How do I create presentations that are guaranteed to CRUSH.",
-        "How to persuade the whole crowd without selling or talking about your product.",
-        "The #1 strategy you can use to make any offer SELL AT ANY PRICE.",
-        "How to SCALE the presentation easily.",
+        "My easy-to-understand method to grow your income without working extra hours.",
+        "One simple change that can increase your sales by 50–60%.",
+        "How to create presentations that make people say “YES” naturally.",
+        "How to talk to a group without sounding salesy — A.I. helps you prepare.",
+        "The easiest way to increase your price confidently and still get clients.",
+        "How to automate daily tasks so your business keeps running smoothly.",
       ],
     },
   ];
@@ -189,24 +191,11 @@ const Agenda = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top Heading - Mobile: 2 lines, Desktop: 2 lines */}
         <div className="text-center mb-8">
-          {/* Mobile View - 2 lines with yellow background */}
-          <div className="md:hidden">
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
-              Results Driven Agenda For <span className="bg-[#FFFECD]">3-</span>
-            </h2>
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
-              <span className="bg-[#FFFECD]">Day High-Ticket</span> Sprint
-            </h2>
-          </div>
-
-          {/* Desktop View - 2 lines */}
-          <div className="hidden md:block">
-            <h2 className="text-4xl font-bold text-blue-900 mb-2">
-              Results Driven Agenda For{" "}
-              <span className="bg-[#FFFECD] px-2">3-Day High-Ticket</span>
-            </h2>
-            <h2 className="text-4xl font-bold text-blue-900">Sprint</h2>
-          </div>
+          {/* Combined and Responsive View */}
+          <h2 className="text-[27px] md:text-4xl font-bold text-blue-900 leading-tight">
+            Results Driven Agenda For{' '}
+            <span className="bg-[#FFFECD] px-2">21-Day Wellness Business</span> Transformation
+          </h2>
         </div>
 
         {/* Underline decoration */}

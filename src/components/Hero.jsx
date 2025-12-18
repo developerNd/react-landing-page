@@ -3,17 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Hero.css";
 
 const Hero = () => {
-  const [currentWord, setCurrentWord] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  const words = ["Build", "Scale", "Launch"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [words.length]);
 
 
 
@@ -63,41 +54,28 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto py-[20px] text-center">
           {/* Main Heading */}
           <div className="font-bold mb-6">
-            {/* Line 1 - Keep on same line for mobile - Updated color to #0F2C80 */}
-            <div className="flex flex-wrap items-center justify-center gap-1 md:gap-0">
-              <span
-                key={currentWord}
-                className="ms-6 text-[22px] sm:text-2xl md:text-5xl font-bold inline-block w-20 sm:w-28 md:w-44 text-center slide-up animated-word-style"
-              >
-                {words[currentWord]}
-              </span>
+            {/* Main Heading - Refactored to a single line */}
+            <div className="flex flex-wrap items-center justify-center">
+
               <span
                 className="text-[22px] sm:text-2xl md:text-5xl md:ml-2 text-center main-heading-span-2"
               >
-                Your Coaching Business To
-              </span>
-            </div>
-
-            {/* Line 2 - Updated color to #0F2C80 */}
-            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
+                Scale Your Wellness Coaching Business To
+              {/* </span> */}
               <span
                 className="inline-block px-2 sm:px-3 py-1 text-[21px] sm:text-2xl md:text-5xl font-bold main-heading-span-3"
               >
                 10 Lakhs/Month
               </span>
-              <span
+              {/* <span
                 className="text-[21px] sm:text-2xl md:text-5xl text-center main-heading-span-4"
-              >
-                PROFIT Using Army Of
-              </span>
-            </div>
-
-            {/* Line 3 - Updated color to #0F2C80 */}
-            <div>
+              > */}
+                PROFIT Using a Team Of
+              {/* </span>
               <span
                 className="text-[22px] sm:text-2xl md:text-5xl underline decoration-2 main-heading-span-5"
-              >
-                A.I. Agents.
+              > */}
+               <u> A.I. Agents.</u> 
               </span>
             </div>
           </div>
@@ -326,7 +304,7 @@ const Hero = () => {
                           <p
                             className="event-detail-value"
                           >
-                            7 PM - 9 PM
+                            10 AM - 9 PM
                           </p>
                         </div>
                       </div>
@@ -404,7 +382,7 @@ const Hero = () => {
                           <p
                             className="event-detail-value"
                           >
-                            English
+                            Hindi
                           </p>
                         </div>
                       </div>
@@ -510,13 +488,13 @@ const Hero = () => {
                     <p
                       className="leading-relaxed agenda-item-text"
                     >
-                      How to{" "}
+                      {/* How to{" "} */}
                       <strong
                         className="agenda-item-strong"
                       >
-                        SELL Premium Offers Without Sales Calls
+                        Facebook Ads Aur Landing Page?
                       </strong>{" "}
-                      & Close Effortlessly in 5 hours/month.
+                      Sirf Paisa Jalta Hai. Aapke Paas Serious Client Nahi, Sirf Time-Pass Log Aate Hain. aisa 🤔??
                     </p>
                   </div>
 
@@ -548,13 +526,13 @@ const Hero = () => {
                     <p
                       className="leading-relaxed agenda-item-text"
                     >
-                      How To Create A Buying Movement That Makes{" "}
+                      {/* How To Create A Buying Movement That Makes{" "} */}
                       <strong
                         className="agenda-item-strong"
                       >
-                        People Throw Credit Cards
+                        Circle of Influence Aur Networking/ Road Activity?
                       </strong>{" "}
-                      At You To Buy!
+                     Bas Mazdoori Hai. Thoda Paisa Aata Hai, Lekin Consistency Aur Growth Ruk Jaati Hai.
                     </p>
                   </div>
                 </div>

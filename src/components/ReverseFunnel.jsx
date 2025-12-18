@@ -87,45 +87,16 @@ const ReverseFunnel = () => {
       <div className="max-w-7xl mx-auto">
         {/* Top Heading - Mobile: 4 lines FULL WIDTH, Desktop: 2 lines */}
         <div className="text-center mb-6">
-          {/* Mobile View - 4 lines with NO horizontal padding */}
-          <div className="md:hidden -mx-4 px-0">
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
-              After <span className="bg-[#FFFECD]">65+ Crores In Sales</span>
-            </h2>
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight ">
-              The Only System{" "}
-              <span className="underline decoration-4 decoration-blue-900">
-                You'll Ever
-              </span>
-            </h2>
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
-              <span className="underline decoration-4 decoration-blue-900">
-                Need
-              </span>{" "}
-              To Hit 1 CR Rapidly In
-            </h2>
-            <h2 className="text-[27px] font-bold text-blue-900 leading-tight">
-              2025!
-            </h2>
-          </div>
-
-          {/* Desktop View - 2 lines */}
-          <div className="hidden md:block">
-            <h2 className="text-4xl font-bold text-blue-900 mb-2">
-              After{" "}
-              <span className="bg-[#FFFECD] px-2">65+ Crores In Sales</span> The
-              Only System{" "}
-              <span className="underline decoration-4 decoration-blue-900">
-                You'll
-              </span>
-            </h2>
-            <h2 className="text-4xl font-bold text-blue-900">
-              <span className="underline decoration-4 decoration-blue-900">
-                Ever Need
-              </span>{" "}
-              To Hit 1 CR Rapidly In 2025!
-            </h2>
-          </div>
+          {/* Combined and Responsive View */}
+          <h2 className="text-[27px] md:text-4xl font-bold text-blue-900 leading-tight">
+            After{' '}
+            <span className="bg-[#FFFECD] px-2">15+ Crores In Sales for Wellness Coaches,</span> The
+            Only System{' '}
+            <span className="underline decoration-4 decoration-blue-900">
+                You'll Ever Need
+            </span>{' '}
+            To Hit 1 CR Rapidly In 2026!
+          </h2>
         </div>
 
         {/* Underline decoration - Reduced margin on mobile */}
