@@ -1,5 +1,5 @@
 import React from "react";
-
+import { trackLead } from "../utils/facebookConversion";
 const parseAndHighlight = (text) => {
   const parts = text.split(/(<strong>.*?<\/strong>)/g);
   return parts.map((part, index) => {
@@ -57,7 +57,14 @@ const Agenda = () => {
       ],
     },
   ];
-
+ const handleBookingClick = async () => {
+      // Track the lead event when booking button is clicked
+      try {
+        await trackLead({}, 0, 'INR');
+      } catch (error) {
+        console.error('Error tracking lead:', error);
+      }
+    };
   return (
     <div className="bg-[#FFFFFF] py-12 p-[10px] relative overflow-hidden">
       {/* Decorative Star - Right Side (Golden) - Top */}
@@ -299,7 +306,7 @@ const Agenda = () => {
         <div className="flex flex-col items-center gap-6 mt-12">
           {/* Enroll Button with Badge */}
           <div className="relative w-full md:w-auto">
-            <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
+            <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block"  onClick={handleBookingClick}>
               <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
                 <span className="relative z-10">
                   BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>

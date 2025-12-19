@@ -1,7 +1,15 @@
 import React, { useEffect, useRef } from "react";
+import { trackLead } from "../utils/facebookConversion";
 import "./Clients.css";
 
 const Clients = () => {
+  const handleBookingClick = async () => {
+    try {
+      await trackLead({}, 0, 'INR');
+    } catch (error) {
+      console.error('Error tracking lead:', error);
+    }
+  };
   const containerRef = useRef(null);
   const animationRef = useRef(null);
   const offsetRef = useRef(0);
@@ -703,7 +711,7 @@ const Clients = () => {
           <div className="flex flex-col items-center gap-6 px-4">
             {/* Enroll Button */}
             <div className="relative w-full sm:w-auto">
-              <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block" onClick={handleBookingClick}>
                 <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg sm:text-xl md:text-2xl px-8 sm:px-12 py-3 sm:py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden w-full sm:w-auto">
                   <span className="relative z-10">
                     BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>

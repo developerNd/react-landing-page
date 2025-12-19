@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { trackSchedule, trackCompleteRegistration } from '../utils/facebookConversion';
 import './LDSThankYou.css';
 
 const LDSThankYou = () => {
+  // Track successful booking on page load
+  useEffect(() => {
+    const trackBookingSuccess = async () => {
+      try {
+        // Track Schedule event
+        await trackSchedule();
+
+        // Track CompleteRegistration event
+        await trackCompleteRegistration();
+
+        console.log('Booking success events tracked');
+      } catch (error) {
+        console.error('Error tracking booking success:', error);
+      }
+    };
+
+    trackBookingSuccess();
+  }, []);
   return (
     <div className="bg-white min-h-screen pb-8 relative overflow-hidden px-[10px]">
       {/* Background Pattern */}
