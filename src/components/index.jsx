@@ -5,3 +5,4 @@ export { default as Agenda } from './Agenda';
 export { default as Bonuses } from './Bonuses';
 export { default as Pricing } from './Pricing';
 export { default as FAQ } from './FAQ';
+export { default as LDSThankYou } from './LDSThankYou';

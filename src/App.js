@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Hero, Clients, ReverseFunnel, Agenda, Bonuses, Pricing, FAQ } from './components';
+import { Hero, Clients, ReverseFunnel, Agenda, Bonuses, Pricing, FAQ, LDSThankYou } from './components';
 
 // Home Page Component
 function HomePage() {
@@ -61,6 +61,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/ldsthankyou" element={<LDSThankYou />} />
       </Routes>
     </div>
   );
