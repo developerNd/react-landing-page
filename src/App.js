@@ -31,7 +31,7 @@ function HomePage() {
       <FAQ />
 
       {/* Sticky Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.15)] py-3 px-8 sm:px-10 md:px-6 lg:px-3 z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-[#18214b] text-white shadow-[0_-4px_20px_rgba(0,0,0,0.15)] py-3 px-8 sm:px-10 md:px-6 lg:px-3 z-50">
         <div className="max-w-6xl mx-auto flex flex-row items-center justify-between gap-4 sm:gap-5">
           {/* Left Side - Price and Deadline */}
           <div className="flex flex-col items-start">
@@ -39,7 +39,7 @@ function HomePage() {
               <p className="text-2xl sm:text-4xl font-bold text-green-600">₹0</p>
               <span className="line-through text-red-500 text-lg sm:text-2xl font-semibold">₹999</span>
             </div>
-            <p className="text-sm sm:text-base font-semibold mt-1" style={{color: '#2A2A2A'}}>Deadline {getCurrentDate()}</p>
+            <p className="text-sm sm:text-base font-semibold mt-1" >Deadline {getCurrentDate()}</p>
           </div>
 
           {/* Empty spacer */}
@@ -49,7 +49,7 @@ function HomePage() {
           <div className="flex flex-col items-center gap-1 sm:gap-2 md:mr-32">
             <div className="relative">
               <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block" onClick={handleBookingClick}>
-                <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-lg px-6 sm:px-14 py-2 sm:py-3 rounded-lg relative transition transform hover:scale-105 shadow-lg overflow-hidden">
+                <button className="bg-white  hover:bg-red-700 text-black font-bold text-sm sm:text-lg px-6 sm:px-14 py-2 sm:py-3 rounded-lg relative transition transform hover:scale-105 shadow-lg overflow-hidden">
                   <span className="relative z-10">BOOK CALL NOW</span>
                   <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
                 </button>
@@ -58,7 +58,7 @@ function HomePage() {
                 10 Seats Left
               </span>
             </div>
-            <p className="text-sm sm:text-base font-semibold" style={{color: '#2A2A2A'}}>+ Unbelievable Bonuses</p>
+            <p className="text-sm sm:text-base font-semibold" >+ Unbelievable Bonuses</p>
           </div>
         </div>
       </div>

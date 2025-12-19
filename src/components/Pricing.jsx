@@ -258,9 +258,9 @@ const Pricing = () => {
               </div>
               {/* Placeholder for man image */}
               <img
-                src="/assets/images/man.png"
+                src="/assets/images/man.jpeg"
                 alt="Shubh Jain"
-                className="w-80 h-auto md:w-96 -mt-4 relative z-20"
+                className="w-80 h-auto md:w-96 -mt-4 relative z-20 rounded-lg"
                 onError={(e) => {
                   e.target.style.display = "none";
                 }}
