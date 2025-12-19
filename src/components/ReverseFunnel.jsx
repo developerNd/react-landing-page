@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { trackLead } from "../utils/facebookConversion";
+import { trackSchedule } from "../utils/facebookConversion";
 
 const ReverseFunnel = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
@@ -32,7 +32,7 @@ const ReverseFunnel = () => {
   const handleBookingClick = async () => {
       // Track the lead event when booking button is clicked
       try {
-        await trackLead({}, 0, 'INR');
+        await trackSchedule({}, 0, 'INR');
       } catch (error) {
         console.error('Error tracking lead:', error);
       }

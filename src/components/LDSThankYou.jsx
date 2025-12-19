@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { trackSchedule, trackCompleteRegistration } from '../utils/facebookConversion';
+import { trackSchedule } from '../utils/facebookConversion';
 import './LDSThankYou.css';
 
 const LDSThankYou = () => {
@@ -9,9 +9,6 @@ const LDSThankYou = () => {
       try {
         // Track Schedule event
         await trackSchedule();
-
-        // Track CompleteRegistration event
-        await trackCompleteRegistration();
 
         console.log('Booking success events tracked');
       } catch (error) {

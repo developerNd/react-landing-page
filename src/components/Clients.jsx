@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { trackLead } from "../utils/facebookConversion";
+import { trackSchedule } from "../utils/facebookConversion";
 import "./Clients.css";
 
 const Clients = () => {
   const handleBookingClick = async () => {
     try {
-      await trackLead({}, 0, 'INR');
+      await trackSchedule({}, 0, 'INR');
     } catch (error) {
       console.error('Error tracking lead:', error);
     }
