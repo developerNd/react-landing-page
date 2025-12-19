@@ -543,15 +543,17 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center gap-4 w-full md:w-auto">
                   {/* CTA Button with Shimmer Effect */}
                   <div className="relative w-full md:w-auto">
-                    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-[20px] text-base sm:text-lg md:text-xl px-[20px] sm:px-8 md:px-10 py-[20px] sm:py-4 rounded-[20px] shadow-2xl relative transition transform hover:scale-105 overflow-hidden w-full md:w-auto md:whitespace-nowrap">
-                      <span className="relative z-10">
-                        BOOK CALL NOW @ 0{" "}
-                        <span className="line-through text-red-300 ml-1">
-                          ₹999
+                    <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
+                      <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-[20px] text-base sm:text-lg md:text-xl px-[20px] sm:px-8 md:px-10 py-[20px] sm:py-4 rounded-[20px] shadow-2xl relative transition transform hover:scale-105 overflow-hidden w-full md:w-auto md:whitespace-nowrap">
+                        <span className="relative z-10">
+                          BOOK CALL NOW @ 0{" "}
+                          <span className="line-through text-red-300 ml-1">
+                            ₹999
+                          </span>
                         </span>
-                      </span>
-                      <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
-                    </button>
+                        <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+                      </button>
+                    </a>
                     <span className="absolute -top-2 sm:-top-3 right-0 sm:-right-3 bg-black text-white text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-bold z-20">
                       10 Seats Left
                     </span>
