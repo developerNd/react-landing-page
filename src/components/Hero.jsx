@@ -211,7 +211,7 @@ const Hero = () => {
                       onClick={handlePlayVideo}
                       style={{
                         backgroundImage:
-                          "url(https://lp.launchatscale.com/wp-content/uploads/2024/05/Shubh-Jain-thum1-1-1.avif)",
+                          "url(https://flywayx.com/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-18-at-4.49.30-PM.jpeg)",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                       }}
@@ -545,7 +545,7 @@ const Hero = () => {
                   <div className="relative w-full md:w-auto">
                     <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-[20px] text-base sm:text-lg md:text-xl px-[20px] sm:px-8 md:px-10 py-[20px] sm:py-4 rounded-[20px] shadow-2xl relative transition transform hover:scale-105 overflow-hidden w-full md:w-auto md:whitespace-nowrap">
                       <span className="relative z-10">
-                        ENROLL NOW @ 99{" "}
+                        BOOK CALL NOW @ 0{" "}
                         <span className="line-through text-red-300 ml-1">
                           ₹999
                         </span>

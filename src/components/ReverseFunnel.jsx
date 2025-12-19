@@ -120,7 +120,7 @@ const ReverseFunnel = () => {
         {/* Animated Arrows Above Videos - Desktop */}
         <div className="hidden md:grid md:grid-cols-3 gap-4 mb-6 max-w-6xl mx-auto">
           {/* Arrow 1 - Left pointing down with left curve */}
-          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+          {/* <div className="flex justify-center items-end" style={{ height: '100px' }}>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 500 500" 
@@ -166,10 +166,10 @@ const ReverseFunnel = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
 
           {/* Arrow 2 - Center pointing straight down */}
-          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+          {/* <div className="flex justify-center items-end" style={{ height: '100px' }}>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 500 500" 
@@ -214,10 +214,10 @@ const ReverseFunnel = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
 
           {/* Arrow 3 - Right pointing down with right curve */}
-          <div className="flex justify-center items-end" style={{ height: '100px' }}>
+          {/* <div className="flex justify-center items-end" style={{ height: '100px' }}>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 500 500" 
@@ -263,62 +263,12 @@ const ReverseFunnel = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
         </div>
 
 
 
-        {/* Three Testimonial Video Cards */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12 max-w-6xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-shadow"
-            >
-              {/* Video Thumbnail with Play Button Overlay */}
-              <div className="p-4">
-                <div
-                  className="relative w-full bg-gray-200 rounded-xl overflow-hidden cursor-pointer group"
-                  style={{ paddingBottom: "56.25%" }}
-                >
-                  <img
-                    src={testimonial.thumbnail}
-                    alt={`Testimonial ${testimonial.id}`}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.src = `https://ui-avatars.com/api/?name=Testimonial+${testimonial.id}&size=400&background=random`;
-                    }}
-                  />
-                  {/* Play Button Overlay */}
-                  <div
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 group-hover:bg-opacity-30 transition"
-                    onClick={() => handlePlayVideo(testimonial)}
-                  >
-                    <div className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition transform">
-                      <svg
-                        className="w-10 h-10 text-gray-800 ml-1"
-                        fill="transparent"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        style={{ opacity: 0.8 }}
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Card Text */}
-              <div className="px-5 pb-5 text-center">
-                <p className="text-base md:text-lg font-semibold text-gray-800">
-                  {testimonial.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* CTA Button - Full width on mobile */}
         <div className="flex flex-col items-center gap-6 mt-12">
@@ -326,7 +276,7 @@ const ReverseFunnel = () => {
           <div className="relative w-full md:w-auto">
             <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
               <span className="relative z-10">
-                ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
+                BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>
               </span>
               <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </button>

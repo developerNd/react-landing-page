@@ -168,7 +168,7 @@ const Pricing = () => {
             Price Today:{" "}
             <span className="line-through text-gray-400">₹1499</span>{" "}
             <span className="line-through text-gray-400">₹999</span>{" "}
-            <span className="text-green-600">₹99/-</span>
+            <span className="text-green-600">₹0/-</span>
           </h3>
         </div>
 
@@ -178,7 +178,7 @@ const Pricing = () => {
           <div className="relative w-full md:w-auto">
             <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
               <span className="relative z-10">
-                ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
+                BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>
               </span>
               <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </button>

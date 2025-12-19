@@ -10,72 +10,37 @@ const Clients = () => {
     {
       id: 1,
       name: "Jatan Shah",
-      title: "Microsoft Excel and Stock Market Coach",
+      // title: "Microsoft Excel and Stock Market Coach",
       followers: "188K+",
-      image: "/assets/images/1.png",
+      image: "/assets/images/1.jpeg",
     },
     {
       id: 2,
-      name: "Aarzoo Shah",
-      title: "India's #1 Life Coach",
+      name: "Ankita rajput",
+      // title: "India's #1 Life Coach",
       followers: "19.5K+",
-      image: "/assets/images/2.png",
+      image: "/assets/images/2.jpeg",
     },
     {
       id: 3,
-      name: "Karthik Naidu",
-      title: "SaaS Business Coach",
+      name: "Swastika",
+      // title: "SaaS Business Coach",
       followers: "22.2K+",
-      image: "/assets/images/3.png",
+      image: "/assets/images/3.jpeg",
     },
     {
       id: 4,
-      name: "Swastik Nandakumar",
-      title: "Performance coach and business growth expert",
+      name: "Karthik Naidu",
+      // title: "Performance coach and business growth expert",
       followers: "44.7K+",
-      image: "/assets/images/4.png",
+      image: "/assets/images/4.jpeg",
     },
     {
       id: 5,
-      name: "Ankit Neerav",
-      title: "Law of Attraction Coach",
+      name: "Tripti Neerav",
+      // title: "Law of Attraction Coach",
       followers: "24.3K+",
-      image: "/assets/images/5.png",
-    },
-    {
-      id: 6,
-      name: "Shankar Kulkarni",
-      title: "Financial Freedom & Confidence Coach",
-      followers: "9,111+",
-      image: "/assets/images/6.png",
-    },
-    {
-      id: 7,
-      name: "Viral Jain",
-      title: "Amazon Coach",
-      followers: "11.1K+",
-      image: "/assets/images/7.png",
-    },
-    {
-      id: 8,
-      name: "Dharaneetharan",
-      title: "Digital Marketing Coach",
-      followers: "20.0K+",
-      image: "/assets/images/8.png",
-    },
-    {
-      id: 9,
-      name: "Omkar Phadatare",
-      title: "Stock Market Coach",
-      followers: "26.6K+",
-      image: "/assets/images/9.png",
-    },
-    {
-      id: 10,
-      name: "Saurav Pal",
-      title: "Career Scaling Coach",
-      followers: "1.53K+",
-      image: "/assets/images/10.png",
+      image: "/assets/images/5.jpeg",
     },
   ];
 
@@ -195,9 +160,9 @@ const Clients = () => {
                         </h3>
                       </div>
 
-                      <p className="text-gray-600 text-sm mb-4 flex-grow flex items-center justify-center px-2">
+                      {/* <p className="text-gray-600 text-sm mb-4 flex-grow flex items-center justify-center px-2">
                         {client.title}
-                      </p>
+                      </p> */}
 
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <svg
@@ -740,7 +705,7 @@ const Clients = () => {
             <div className="relative w-full sm:w-auto">
               <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg sm:text-xl md:text-2xl px-8 sm:px-12 py-3 sm:py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden w-full sm:w-auto">
                 <span className="relative z-10">
-                  ENROLL NOW @ ₹99 <span className="line-through">₹999</span>
+                  BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>
                 </span>
                 <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
               </button>
