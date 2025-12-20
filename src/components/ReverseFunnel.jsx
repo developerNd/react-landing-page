@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { trackSchedule } from "../utils/facebookConversion";
 
 const ReverseFunnel = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
@@ -28,15 +27,6 @@ const ReverseFunnel = () => {
       isPortrait: true,
     },
   ];
-
-  const handleBookingClick = async () => {
-      // Track the lead event when booking button is clicked
-      try {
-        await trackSchedule({}, 0, 'INR');
-      } catch (error) {
-        console.error('Error tracking lead:', error);
-      }
-    };
 
   const handlePlayVideo = (testimonial) => {
     setPlayingVideo(testimonial);
@@ -283,7 +273,7 @@ const ReverseFunnel = () => {
         <div className="flex flex-col items-center gap-6 mt-12">
           {/* Enroll Button with Badge */}
           <div className="relative w-full md:w-auto">
-            <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block"  onClick={handleBookingClick}>
+            <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
               <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-2xl px-8 md:px-12 py-4 rounded-3xl relative transition transform hover:scale-105 shadow-2xl overflow-hidden">
                 <span className="relative z-10">
                   BOOK CALL NOW @ ₹0 <span className="line-through">₹999</span>

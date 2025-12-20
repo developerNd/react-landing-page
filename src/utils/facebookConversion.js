@@ -118,7 +118,7 @@ export const trackPageView = async () => {
  */
 export const trackSchedule = async (userData = {}) => {
   return sendConversionEvent('Schedule', userData, {
-    content_name: 'Call Scheduled',
+    content_name: 'Schedule',
     content_category: 'Consultation',
   });
 };

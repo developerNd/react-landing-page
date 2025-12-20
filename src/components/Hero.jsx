@@ -1,20 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { trackSchedule } from "../utils/facebookConversion";
+
 
 import "./Hero.css";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-
-  const handleBookingClick = async () => {
-    // Track the lead event when booking button is clicked
-    try {
-      await trackSchedule({}, 0, 'INR');
-    } catch (error) {
-      console.error('Error tracking lead:', error);
-    }
-  };
 
   const handlePlayVideo = () => {
     console.log("Play button clicked");
@@ -551,7 +542,7 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center gap-4 w-full md:w-auto">
                   {/* CTA Button with Shimmer Effect */}
                   <div className="relative w-full md:w-auto">
-                    <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block" onClick={handleBookingClick}>
+                    <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
                       <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-[20px] text-base sm:text-lg md:text-xl px-[20px] sm:px-8 md:px-10 py-[20px] sm:py-4 rounded-[20px] shadow-2xl relative transition transform hover:scale-105 overflow-hidden w-full md:w-auto md:whitespace-nowrap">
                         <span className="relative z-10">
                           BOOK CALL NOW @ 0{" "}

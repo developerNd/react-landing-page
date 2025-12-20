@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Hero, Clients, ReverseFunnel, Agenda, Bonuses, Pricing, FAQ, LDSThankYou } from './components';
-import { trackLead } from './utils/facebookConversion';
+
 
 // Home Page Component
 function HomePage() {
@@ -11,14 +11,7 @@ function HomePage() {
     return new Date().toLocaleDateString('en-US', options);
   };
 
-  const handleBookingClick = async () => {
-    // Track the lead event when booking button is clicked
-    try {
-      await trackLead({}, 0, 'INR');
-    } catch (error) {
-      console.error('Error tracking lead:', error);
-    }
-  };
+
 
   return (
     <div className="relative pb-4 lg:pb-10">
@@ -48,7 +41,7 @@ function HomePage() {
           {/* Right Side - CTA Button with Bonuses below */}
           <div className="flex flex-col items-center gap-1 sm:gap-2 md:mr-32">
             <div className="relative">
-              <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block" onClick={handleBookingClick}>
+              <a href="https://tool.aiwhatsapp.in/calender/329/105/60%20min" target="_blank" rel="noopener noreferrer" className="block">
                 <button className="bg-white  hover:bg-red-700 text-black font-bold text-sm sm:text-lg px-6 sm:px-14 py-2 sm:py-3 rounded-lg relative transition transform hover:scale-105 shadow-lg overflow-hidden">
                   <span className="relative z-10">BOOK CALL NOW</span>
                   <span className="absolute inset-0 -skew-x-12 animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
